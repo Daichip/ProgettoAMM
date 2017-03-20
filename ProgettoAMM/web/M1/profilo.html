@@ -6,11 +6,49 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>NerdBook: Profilo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Davide Fara">
+        <meta name="keywords" content="nerdbook Nerd Book social network friends profilo profile my profile">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="header">
+            <div title="login">
+                <h1>NerdBook: Profilo</h1>
+            </div>
+        </div>
+        <nav>
+            <ol>
+                <li><a href="descrizione.html" target="_blank">Il Sito</a></li>
+                <li><a href="login.html" target="_blank">Login</a></li>
+            </ol>
+        </nav>
+        <div id="divBody">
+            <form action="#" method="post">
+                <label for="userNome">Nome</label>
+                <input type="text" name="userNome" id="userNome"/>
+                <br/>
+                <label for="userCognome">Cognome</label>
+                <input type="text" name="userCognome" id="userCognome"/>
+                <br/>
+                <label for="userPicURL">Link foto profilo</label>
+                <input type="text" name="userPicURL" id="userPicURL" value=""/>
+                <br/>
+                <label for="userFraseDescrizione">Descrizione</label>
+                <textarea name="userFraseDescrizione" id="userFraseDescrizione"></textarea>
+                <br/>
+                <label for="userDataNascita">Data di nascita</label>
+                <input type="date" name="userDataNascita" id="userDataNascita"/>
+                <br/>
+                <label for="userPass">Password</label>
+                <input type="password" name="userPass" id="userPass"/>
+                <br/>
+                <label for="userConfermaPass">Conferma la Password</label>
+                <input type="password" name="userConfermaPass" id="userConfermaPass"/>
+                <br/>
+                <button type="submit">Invia</button>
+            </form>
+        </div>
     </body>
 </html>
