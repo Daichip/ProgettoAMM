@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-mar-2017, 10.38.00
+    Author     : Davide Fara
+*/
+
+body
+{
+    background-color: #c0d5f7;
+    font-size: 30px/25px;
+}
+
+h1
+{
+    background-color: #1f3559;
+    color: #ffffff;
+    font: 40px/40px "Verdana", Arial, sans-serif;
+}
+
+h2
+{
+    color: #000000;
+    font: 30px/30px "Calibri", Arial, sans-serif;
+}
+
+h3
+{
+    color: #000000;
+    font: 20px/20px "Calibri", Arial, sans-serif;
+    font-weight: bold;
+}
+
+p
+{
+    color: #000000;
+    font: 20px/25px "Calibri", "Times New Roman", Arial, sans-serif;
+}
+
+#post1, #post2, #post3
+{
+    background-color: #ffffff;
+    color: #000000;
+      
+}
+
+#post1 img, h3, #post2 img, h3, #post3 img, h3
+{
+    display: inline-block;
+}
+
+a:link
+{
+    color: #1d11aa;
+    text-decoration: none;
+}
+
+a:visited
+{
+    color:#e21c18;
+    text-decoration: underlined;
+}
+
+a:hover
+{
+    color:#31bfc4;
+}
