@@ -8,15 +8,34 @@ and open the template in the editor.
     Author     : Davide Fara
 */
 
+/* CSS Generico */
 body
 {
-    background-color: #c0d5f7;
-    font-size: 30px/25px;
+    background-color: #f7f7f7;
+    font: 30px/25px "Calibri", Arial, sans-serif;
+}
+
+
+nav ol, nav li
+{
+    /*
+    background-color: #ffffff;
+    font: 30px/35px "Calibri", Arial, sans-serif;
+    */
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+}
+
+header
+{
+    background-color: #333333;
 }
 
 h1
 {
-    background-color: #1f3559;
+    background-color: #333333;
     color: #ffffff;
     font: 40px/40px "Verdana", Arial, sans-serif;
 }
@@ -24,7 +43,7 @@ h1
 h2
 {
     color: #000000;
-    font: 30px/30px "Calibri", Arial, sans-serif;
+    font: 20px/20px "Calibri", Arial, sans-serif;
 }
 
 h3
@@ -40,18 +59,6 @@ p
     font: 20px/25px "Calibri", "Times New Roman", Arial, sans-serif;
 }
 
-#post1, #post2, #post3
-{
-    background-color: #ffffff;
-    color: #000000;
-      
-}
-
-#post1 img, h3, #post2 img, h3, #post3 img, h3
-{
-    display: inline-block;
-}
-
 a:link
 {
     color: #1d11aa;
@@ -61,10 +68,68 @@ a:link
 a:visited
 {
     color:#e21c18;
-    text-decoration: underlined;
+    text-decoration: underline;
 }
 
 a:hover
 {
     color:#31bfc4;
 }
+
+header div h1
+{
+    margin-top: 0px;
+}
+
+header div h1, header nav
+{
+    display: inline-block;
+    margin-top: 0px;
+}
+
+/* FINE CSS GENERICO */
+
+/* CSS Bacheca */
+.post
+{
+    background-color: #ffffff;
+    color: #000000;
+      
+}
+
+#post2 #linkedImg
+{
+    display: block;
+}
+
+.post .profilePic,h3
+{
+    display: inline-block;
+}
+
+
+
+/* FINE CSS BACHECA */
+
+
+
+
+/* VCSS Profilo */
+
+/* FINE CSS PROFILO */
+
+
+
+
+
+/* CSS Login */
+
+/* FINE CSS LOGIN */
+
+
+
+
+
+/* CSS Descrizione */
+
+/* FINE CSS DESCRIZIONE */
