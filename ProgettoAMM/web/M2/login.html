@@ -16,26 +16,34 @@ and open the template in the editor.
     <body>
         <header>
             <div title="login">
-                <h1>NerdBook: Login</h1>
+                <h1>Login</h1>
             </div>
-            <nav>
+            <nav id="loginNav">
                 <ol>
-                    <li><a href="descrizione.html" target="_blank">Il Sito</a></li>
-                    <li><a href="profilo.html" target="_blank">Profio</a></li>
+                    <li><a href="descrizione.html">Il Sito</a></li>
+                    <li><a href="login.html" target="_blank">Login</a></li>
                     <li><a href="bacheca.html" target="_blank">Bacheca</a></li>
+                    <li><a href="profilo.html" target="_blank">Profilo</a></li>
                 </ol>
             </nav>
         </header>
-
-        <div id="divBody">
-            <form id="loginForm" action="#" method="post">
-                <label for="userId">Nome Utente</label>
-                <input type="text" name="userId" id="userId" placeholder="Inserire il nome utente"/>
-                <label for="userPswd">Password</label>
-                <input type="password" name="userPswd" id="userPswd" placeholder="Inserire la password"/>
-                <button type="submit">Invia</button>
-            </form>
-            <p>Dimenticato la password o il nome utente? Crea un nuovo account!</p>
+        
+        <div id="contPost">
+            <div id="preForm">
+                <img id="logoImg" title="NerdBookLogo" alt="LogoPic" src="/ProgettoAMM/Assets/logoNerdBook.jpg">
+                <h1>NerdBook</h1>
+            </div>
+            <div id="divBody">
+                <form id="loginForm" action="#" method="post">
+                    <div id="insertData">
+                        <label for="userId">Nome Utente</label>
+                        <input type="text" name="userId" id="userId" placeholder="Inserire il nome utente"/>
+                        <label for="userPswd">Password</label>
+                        <input type="password" name="userPswd" id="userPswd" placeholder="Inserire la password"/>
+                    </div>
+                    <button id="subButton" type="submit">Invia</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>

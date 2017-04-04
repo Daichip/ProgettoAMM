@@ -11,7 +11,8 @@ and open the template in the editor.
 /* CSS tag */
 a:active
 {
-    color: #99b5c6;
+    background-color: #ffffff;
+    text-decoration: underline;
 }
 
 a:link
@@ -106,10 +107,17 @@ header nav ol, header nav li
     
 }
 
+/*
 html
 {
     min-height: 100%;
     position: relative;
+}
+*/
+
+nav li.active
+{
+    text-decoration: underline;
 }
 
 p
@@ -119,6 +127,13 @@ p
 }
 
 /* CSS ID */
+
+#contPost
+{
+    margin-left: 750px;
+    margin-right: 750px;
+}
+
 #divBody
 {
     margin-top: 0px;
@@ -152,6 +167,23 @@ p
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
 }
 
+#insertData
+{
+    text-align: center;
+}
+
+#insertData button::after
+{
+    content: '\A';
+    white-space: pre;
+}
+
+#insertData label, #insertData input
+{
+    padding-left: 0px;
+}
+
+
 #intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
 {
     background-color: #ffffff;
@@ -169,9 +201,66 @@ p
     height: auto;
 }
 
+#loginNav
+{
+    display: none;
+}
+
+#loginForm
+{
+    background-color: #ffffff;
+    margin-right:0px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    padding: 20px;
+    width: 320px;
+    height: 200px;
+}
+
+#loginForm label[for="userId"]::after, label[for="userPswd"]::before
+{
+    content: '\A';
+    white-space: pre;
+}
+
+#loginForm label[for="userPswd"]::after, button::before
+{
+    content: '\A';
+    white-space: pre;
+}
+
+#logoImg
+{
+    height: 80px;
+    width: 80px;
+}
+
 #post1, #post2, #post3
 {
     position: relative;
+}
+
+
+#preForm
+{
+    width: 320px;
+    position: relative;
+}
+
+#preForm h1
+{
+    position: absolute;
+    width: 200px;
+    top: 20px;
+    left: 100px;
+    bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+}
+
+#preForm img, #preForm h1
+{
+    display: inline-block;
 }
 
 #side1
@@ -220,6 +309,11 @@ p
     background-position: 0px 5px;
     padding-left: 23px;
     padding-top: 4px;
+}
+
+#subButton
+{
+    width: 100%;
 }
 
 #subList, #divBody
