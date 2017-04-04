@@ -28,7 +28,7 @@ a:visited
 
 a:hover
 {
-    color: #003882;
+    color: #aac8f7;
     text-decoration: none;
 }
 
@@ -130,6 +130,38 @@ p
     font: 32px/32px "Calibri", "Times New Roman", Arial, sans-serif;
 }
 
+
+#faqSito h2
+{
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #1f3559;
+    color: #ffffff;
+    margin-top: 0px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+}
+
+#faqSito h3
+{
+    font-size: 20px;
+    background-color: #1f3559;
+    color: #ffffff;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+}
+
+#intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
+{
+    background-color: #ffffff;
+    margin-top: 1px;
+    margin-right:50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    height: 100%;
+}
+
 #linkedImg
 {
     display: block;
@@ -137,7 +169,10 @@ p
     height: auto;
 }
 
-
+#post1, #post2, #post3
+{
+    position: relative;
+}
 
 #side1
 {
@@ -165,6 +200,26 @@ p
 #side1, #divBody
 {
     display: inline-table;
+}
+
+#sidePersone .sideList li
+{
+    list-style-type: none;
+    background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRPhqHeM3p5ekSrzJJhxCop9iiJmJWwIgM_2Zcp9Vqm7REfTK7AgQ);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 23px;
+    padding-top: 4px;
+}
+
+#sideGruppi .sideList li
+{
+    list-style-type: none;
+    background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT39WuwJ8XWZH76LXeX_CNeiQFS-bc0bi2VccPg6SSM2tcZJXKNxg);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 23px;
+    padding-top: 4px;
 }
 
 #subList, #divBody
@@ -204,7 +259,17 @@ p
 
 #subList ul
 {
-    padding-left: 20px;
+    padding-left: 0px;
+}
+
+#subList li
+{
+    list-style-type: none;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAllBMVEX+/v/O6/z+/v3+/v4FnP7H6/wAjP4FoP7C5P0Akf7+/vsSrv656/0Gnv4AmP7C6f0Ns/4Ah/4Ahf8AgP6t3v3Q8v2+4P7p9f4DpP4Aff7H5P202f2n2vyp5P3H1ftxx/sAlf6b1/zg4vyx6/2H2fvC2f7cy/7v8fv+9/qW0fz+9f8St/678f3p+v7z/v4Tq/54w/3H3v5kV4xxAAAA6ElEQVQYlX2PWXODMAyEJdvBxicQcDlactI65KD5/3+ukJk0fuhUetI3u7NagH9na5ixxjKWRpBtKqG1c8c6gs3ZA5WUXnjsT+o+0DE4FkOcOnq9ERcr15O/XWEEbeYjtWzeNFcdBTr0oBel3a0uJywyL0PwarpXD4hEYKPuksKgkjz7XoJs1WNx1nIEr9aIxeN5i70p8IPSTiX23SNbgmxLStWgEFmOtSZvol2gBuhmY1Yg8tWzsyZSlipP8ITsCbcOQqDlhO1XBGc7IeRzkPsXZEetDwexR717wXRuyZnhnLP0N+iP+QFRaA8AEI1B0QAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 23px;
+    padding-top: 4px;
 }
 
 /* CSS classi */
@@ -213,6 +278,19 @@ p
     background-color: #edf4f9;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
+}
+
+.post p
+{
+    margin-top: 0px;
+}
+
+.post h3
+{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    bottom: 60px;
 }
 
 .post .profilePic, .post h3
@@ -244,22 +322,3 @@ p
     padding-left: 20px;
 }
 
-#sidePersone .sideList li
-{
-    list-style-type: none;
-    background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRPhqHeM3p5ekSrzJJhxCop9iiJmJWwIgM_2Zcp9Vqm7REfTK7AgQ);
-    background-repeat: no-repeat;
-    background-position: 0px 5px;
-    padding-left: 23px;
-    padding-top: 4px;
-}
-
-#sideGruppi .sideList li
-{
-    list-style-type: none;
-    background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT39WuwJ8XWZH76LXeX_CNeiQFS-bc0bi2VccPg6SSM2tcZJXKNxg);
-    background-repeat: no-repeat;
-    background-position: 0px 5px;
-    padding-left: 23px;
-    padding-top: 4px;
-}
