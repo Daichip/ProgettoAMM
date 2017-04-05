@@ -16,20 +16,48 @@ and open the template in the editor.
     <body>
         <header>
             <div title="login">
-                <h1>NerdBook: Profilo</h1>
+                <h1>Profilo</h1>
+                <div class="nameLogOut">
+                    <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="/ProgettoAMM/Assets/images.png">
+                    <h3>Davide Fara</h3>
+                    <p id="logoutP"><a href="login.html" target="_blank">Logout</a></p>
+                </div>
             </div>
             <nav>
                 <ol>
-                    <li><a href="descrizione.html">Il Sito</a></li>
+                    <li><a href="descrizione.html" target="_blank">Il Sito</a></li>
                     <li><a href="login.html" target="_blank">Login</a></li>
                     <li><a href="bacheca.html" target="_blank">Bacheca</a></li>
                     <li><a href="profilo.html" target="_blank">Profilo</a></li>
                 </ol>
             </nav>
         </header>
+        
+        <div class="sideBar" id="side1">
+            <div id="sidePersone">
+                <h2>Persone</h2>
+                <nav class="sideList">
+                    <ul>
+                        <li>Mario "Mario Mario" Rossi</li>
+                        <li>Luca "Link" Verdi</li>
+                        <li>Carlo "Shy Guy" Rossi</li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="sideGruppi">
+                <h2>Gruppi</h2>
+                <nav class="sideList">
+                    <ul>
+                        <li>Plumbers</li>
+                        <li>Heroes of the Triforce</li>
+                        <li>Nobodies</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 
         <div id="divBody">
-            <form action="#" method="post">
+            <form id="profileForm" action="#" method="post">
                 <label for="userNome">Nome</label>
                 <input type="text" name="userNome" id="userNome"/>
                 <br/>

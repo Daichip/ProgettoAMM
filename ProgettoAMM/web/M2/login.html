@@ -14,13 +14,13 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
     <body>
-        <header>
+        <header class="hiddenHeader">
             <div title="login">
                 <h1>Login</h1>
             </div>
-            <nav id="loginNav">
+            <nav>
                 <ol>
-                    <li><a href="descrizione.html">Il Sito</a></li>
+                    <li><a href="descrizione.html" target="_blank">Il Sito</a></li>
                     <li><a href="login.html" target="_blank">Login</a></li>
                     <li><a href="bacheca.html" target="_blank">Bacheca</a></li>
                     <li><a href="profilo.html" target="_blank">Profilo</a></li>
@@ -34,7 +34,7 @@ and open the template in the editor.
                 <h1>NerdBook</h1>
             </div>
             <div id="divBody">
-                <form id="loginForm" action="#" method="post">
+                <form class="dataForm" id="loginForm" action="#" method="post">
                     <div id="insertData">
                         <label for="userId">Nome Utente</label>
                         <input type="text" name="userId" id="userId" placeholder="Inserire il nome utente"/>
