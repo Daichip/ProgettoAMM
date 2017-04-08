@@ -9,11 +9,16 @@ and open the template in the editor.
 */
 
 /* CSS tag */
-header nav li.active
+header nav a.active
 {
     background-color: #ffffff;
     text-decoration: underline;
     border-radius: 5px;
+    height: 30px;
+    padding-top: 17px;
+    padding-right: 12px;
+    padding-bottom: 28px;
+    padding-left: 10px;
 }
 
 a:link
@@ -32,6 +37,16 @@ a:hover
 {
     color: #aac8f7;
     text-decoration: none;
+}
+
+form:hover:focus
+{
+    color: aquamarine;
+}
+
+input:focus, textArea:focus
+{
+    color: aquamarine;
 }
 
 body
@@ -155,6 +170,7 @@ p
 #divBody h1
 {
     font: 32px/32px "Calibri", "Times New Roman", Arial, sans-serif;
+    padding-right: 1490px;
 }
 
 
@@ -241,7 +257,6 @@ p
     position: relative;
 }
 
-
 #preForm
 {
     width: 320px;
@@ -264,15 +279,14 @@ p
     display: inline-block;
 }
 
-#side1
+
+#profileForm
 {
     background-color: #ffffff;
-    margin-top: 1px;
-    margin-right:50px;
+    margin-right:0px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    float: left;
-    height: 100%;
+    padding: 20px;
 }
 
 #side1 h2
@@ -312,9 +326,14 @@ p
     padding-top: 4px;
 }
 
+#sidePersone, #sideGruppi
+{
+    height: auto;
+}
+
 #subButton
 {
-    width: 100%;
+    width: 325px;
 }
 
 #subList, #divBody
@@ -423,22 +442,22 @@ p
     padding-left: 20px;
 }
 
-
-#profileForm
+.sideBar
 {
     background-color: #ffffff;
-    margin-right:0px;
+    margin-top: 1px;
+    margin-right:50px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    padding: 20px;
+    float: left;
+    height: 100%;
 }
-
 
 .nameLogOut
 {
     position: absolute;
     top: 5px;
-    left: 1200px;
+    left: 1700px;
 }
 
 .nameLogOut h3
@@ -475,4 +494,18 @@ p
     font: 20px/15px "Calibri", "Times New Roman", Arial, sans-serif;
     margin: 0px;
     padding-left: 50px;
+}
+
+#profileForm label
+{
+    font-size: 20px;
+    padding-left:10px;
+    width:125px;
+    display:inline-block;
+}
+
+#profileForm
+{
+    display: inline-block;
+    float: left;
 }
