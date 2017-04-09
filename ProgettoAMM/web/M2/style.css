@@ -9,18 +9,6 @@ and open the template in the editor.
 */
 
 /* CSS tag */
-header nav a.active
-{
-    background-color: #ffffff;
-    text-decoration: underline;
-    border-radius: 5px;
-    height: 30px;
-    padding-top: 17px;
-    padding-right: 12px;
-    padding-bottom: 28px;
-    padding-left: 10px;
-}
-
 a:link
 {
     color: #1e6f9e;
@@ -112,7 +100,7 @@ header nav
     padding-bottom: 0px;
     position: absolute;
     top: 7px;
-    left: 450px;
+    left: 330px;
 }
 
 header nav ol li a
@@ -134,13 +122,28 @@ header nav ol, header nav li
     
 }
 
-/*
+header nav a.active
+{
+    background-color: #ffffff;
+    text-decoration: underline;
+    border-radius: 5px;
+    height: 30px;
+    padding-top: 17px;
+    padding-right: 12px;
+    padding-bottom: 28px;
+    padding-left: 10px;
+}
+
 html
 {
     min-height: 100%;
     position: relative;
 }
-*/
+
+input:focus, textArea:focus
+{
+    color: aquamarine;
+}
 
 nav li.active
 {
@@ -153,7 +156,8 @@ p
     font: 20px/25px "Calibri", "Times New Roman", Arial, sans-serif;
 }
 
-/* CSS ID */
+
+/* LOGIN CSS */
 
 #contPost
 {
@@ -165,34 +169,14 @@ p
 {
     margin-top: 0px;
     float: left;
+    padding-left: 0px;
 }
 
 #divBody h1
 {
     font: 32px/32px "Calibri", "Times New Roman", Arial, sans-serif;
-    padding-right: 1490px;
-}
-
-
-#faqSito h2
-{
-    font-size: 30px;
-    font-weight: bold;
-    background-color: #1f3559;
-    color: #ffffff;
-    margin-top: 0px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
-}
-
-#faqSito h3
-{
-    font-size: 20px;
-    background-color: #1f3559;
-    color: #ffffff;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    padding-top: 1px;
+    width: 100%;
 }
 
 #insertData #userId, #insertData #userPswd
@@ -209,24 +193,6 @@ p
 #insertData label, #insertData input
 {
     padding-left: 0px;
-}
-
-
-#intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
-{
-    background-color: #ffffff;
-    margin-top: 1px;
-    margin-right:50px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    height: 100%;
-}
-
-#linkedImg
-{
-    display: block;
-    width: 98%;
-    height: auto;
 }
 
 #loginForm
@@ -252,9 +218,9 @@ p
     width: 80px;
 }
 
-#post1, #post2, #post3
+#subButton
 {
-    position: relative;
+    width: 325px;
 }
 
 #preForm
@@ -279,14 +245,28 @@ p
     display: inline-block;
 }
 
+.hiddenHeader
+{
+    display: none;
+}
 
-#profileForm
+/* BACHECA CSS */
+#linkedImg
+{
+    display: block;
+    width: 98%;
+    height: auto;
+}
+
+.sideBar
 {
     background-color: #ffffff;
-    margin-right:0px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    padding: 20px;
+    position: absolute;
+    top: 99px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
 }
 
 #side1 h2
@@ -300,52 +280,94 @@ p
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
 }
 
-
-#side1, #divBody
+.sideList
 {
-    display: inline-table;
+    font-size: 20px;
+    margin-right: 15px;
+
 }
 
-#sidePersone .sideList li
+.sideList ul
 {
-    list-style-type: none;
-    background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRPhqHeM3p5ekSrzJJhxCop9iiJmJWwIgM_2Zcp9Vqm7REfTK7AgQ);
-    background-repeat: no-repeat;
-    background-position: 0px 5px;
-    padding-left: 23px;
-    padding-top: 4px;
+    padding-left: 20px;
 }
 
-#sideGruppi .sideList li
+#post1, #post2, #post3
 {
-    list-style-type: none;
-    background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT39WuwJ8XWZH76LXeX_CNeiQFS-bc0bi2VccPg6SSM2tcZJXKNxg);
-    background-repeat: no-repeat;
-    background-position: 0px 5px;
-    padding-left: 23px;
-    padding-top: 4px;
-}
-
-#sidePersone, #sideGruppi
-{
+    position: relative;
+    width: 1000px;
     height: auto;
 }
 
-#subButton
+.post
 {
-    width: 325px;
+    background-color: #edf4f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
 }
 
-#subList, #divBody
+.post p
 {
-    display: inline-table;
+    margin-top: 0px;
 }
+
+.post h3
+{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    bottom: 60px;
+}
+
+.post .profilePic, .post h3
+{
+    display: inline-block;
+}
+
+.post .profilePic, .post .h3, .post p, .post img
+{
+    padding: 10px;
+}
+
+.post h1
+{
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    margin-top: 1px;
+}
+
+.bodyBacheca, .bodyDescrizione
+{
+    position: relative;
+    width: 1000px;
+    height: auto;
+    left: 330px;
+}
+
+/*//////////*/
+
+
+.sideBar
+{
+    background-color: #ffffff;
+    margin-top: 1px;
+    margin-right: 51px;
+    margin-left: 7px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    float: left;
+    height: 100%;
+    width: 300px;
+}
+
+
+/* DESCRIZIONE CSS */
 
 #subList
 {
     background-color: #ffffff;
     margin-top: 1px;
-    margin-right:50px;
+    margin-right: 51px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
     float: left;
@@ -386,114 +408,60 @@ p
     padding-top: 4px;
 }
 
-/* CSS classi */
 
-.hiddenHeader
+#faqSito h2, #faqSito h3
 {
-    display: none;
-}
-
-.post
-{
-    background-color: #edf4f9;
+    background-color: #1f3559;
+    color: #ffffff;
+    margin-top: 1px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    padding-left: 5px;
 }
 
-.post p
+#faqSito h2
 {
-    margin-top: 0px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.post h3
-{
-    position: absolute;
-    top: 20px;
-    left: 100px;
-    bottom: 60px;
-}
-
-.post .profilePic, .post h3
-{
-    display: inline-block;
-}
-
-.post .profilePic, .post .h3, .post p, .post img
-{
-    padding: 10px;
-}
-
-.post h1
-{
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    margin-top: 0px;
-}
-
-.sideList
+#faqSito h3
 {
     font-size: 20px;
-    margin-right: 15px;
-
 }
 
-.sideList ul
+#faqSito p, #faqSito h6
 {
-    padding-left: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.sideBar
+#intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
 {
     background-color: #ffffff;
     margin-top: 1px;
     margin-right:50px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    float: left;
     height: 100%;
 }
 
-.nameLogOut
-{
-    position: absolute;
-    top: 5px;
-    left: 1700px;
-}
-
-.nameLogOut h3
-{
-    color: #ffffff;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.nameLogOut a
-{
-    height: 200px;
-}
-
-.iconPic
-{
-    width: 30px;
-    height: 30px;
-}
-
-.nameLogOut h3, .iconPic
-{
-    display: inline-block;
-}
-
-.nameLogOut a::before
+/* CSS PROFILO */
+#formDiv label::after
 {
     content: '\A';
     white-space: pre;
 }
 
-#logoutP
+#profileForm
 {
-    font: 20px/15px "Calibri", "Times New Roman", Arial, sans-serif;
-    margin: 0px;
-    padding-left: 50px;
+    /*background-color: #ffffff;*/
+    margin-right:0px;
+   /* border-radius: 5px;*/
+    /*box-shadow: 0 0 10px rgba(0,9,0,0.5);*/
+    padding: 20px;
+    padding-left: 0px;
+    padding-top: 1px;
 }
 
 #profileForm label
@@ -508,4 +476,68 @@ p
 {
     display: inline-block;
     float: left;
+    position: relative;
+}
+
+#formDiv button
+{
+    width: 300px;
+    margin-left: 10px;
+}
+
+#formDiv textArea, #formDiv #userDataNascita
+{
+    width: 167px;
+}
+
+#formDiv
+{
+    position: relative;
+    top: -68px;
+}
+
+/* CSS CONDIVISO */
+
+
+#nameLogOut
+{
+    position: absolute;
+    top: 5px;
+    left: 1700px;
+}
+
+#nameLogOut h3
+{
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#nameLogOut a
+{
+    height: 200px;
+}
+
+#nameLogOut h3, .iconPic
+{
+    display: inline-block;
+}
+
+#nameLogOut a::before
+{
+    content: '\A';
+    white-space: pre;
+}
+
+#nameLogOut p
+{
+    font: 20px/15px "Calibri", "Times New Roman", Arial, sans-serif;
+    margin: 0px;
+    padding-left: 50px;
+}
+
+.iconPic
+{
+    width: 30px;
+    height: 30px;
 }
