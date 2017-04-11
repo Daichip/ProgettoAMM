@@ -100,7 +100,7 @@ header nav
     padding-bottom: 0px;
     position: absolute;
     top: 7px;
-    left: 330px;
+    left: 310px;
 }
 
 header nav ol li a
@@ -134,6 +134,7 @@ header nav a.active
     padding-left: 10px;
 }
 
+
 html
 {
     min-height: 100%;
@@ -161,8 +162,8 @@ p
 
 #contPost
 {
-    margin-left: 750px;
-    margin-right: 750px;
+    margin-left: 40%;
+    margin-right: 50%;
 }
 
 #divBody
@@ -204,12 +205,6 @@ p
     padding: 20px;
     width: 320px;
     height: 200px;
-}
-
-#loginForm label[for="userPswd"]::after, button::before
-{
-    content: '\A';
-    white-space: pre;
 }
 
 #logoImg
@@ -266,7 +261,6 @@ p
     right: 0px;
     left: 0px;
     bottom: 0px;
-    height: 100%;
 }
 
 #side1 h2
@@ -336,12 +330,15 @@ p
     margin-top: 1px;
 }
 
-.bodyBacheca, .bodyDescrizione
+.bodyBacheca, .bodyDescrizione, .bodyProfilo
 {
     position: relative;
     width: 1000px;
     height: auto;
     left: 330px;
+    clear: both;
+    margin-right: 5%;
+    word-wrap: break-word;
 }
 
 /*//////////*/
@@ -362,18 +359,6 @@ p
 
 
 /* DESCRIZIONE CSS */
-
-#subList
-{
-    background-color: #ffffff;
-    margin-top: 1px;
-    margin-right: 51px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    float: left;
-    height: 100%;
-}
-
 #subList h2
 {
     font-size: 30px;
@@ -390,6 +375,7 @@ p
     font-size: 20px;
     margin-right: 15px;
     margin-left: 15px;
+    background-image: url(/ProgettoAMM/Assets/linkIcon.png);
 
 }
 
@@ -397,17 +383,6 @@ p
 {
     padding-left: 0px;
 }
-
-#subList li
-{
-    list-style-type: none;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAllBMVEX+/v/O6/z+/v3+/v4FnP7H6/wAjP4FoP7C5P0Akf7+/vsSrv656/0Gnv4AmP7C6f0Ns/4Ah/4Ahf8AgP6t3v3Q8v2+4P7p9f4DpP4Aff7H5P202f2n2vyp5P3H1ftxx/sAlf6b1/zg4vyx6/2H2fvC2f7cy/7v8fv+9/qW0fz+9f8St/678f3p+v7z/v4Tq/54w/3H3v5kV4xxAAAA6ElEQVQYlX2PWXODMAyEJdvBxicQcDlactI65KD5/3+ukJk0fuhUetI3u7NagH9na5ixxjKWRpBtKqG1c8c6gs3ZA5WUXnjsT+o+0DE4FkOcOnq9ERcr15O/XWEEbeYjtWzeNFcdBTr0oBel3a0uJywyL0PwarpXD4hEYKPuksKgkjz7XoJs1WNx1nIEr9aIxeN5i70p8IPSTiX23SNbgmxLStWgEFmOtSZvol2gBuhmY1Yg8tWzsyZSlipP8ITsCbcOQqDlhO1XBGc7IeRzkPsXZEetDwexR717wXRuyZnhnLP0N+iP+QFRaA8AEI1B0QAAAABJRU5ErkJggg==);
-    background-repeat: no-repeat;
-    background-position: 0px 5px;
-    padding-left: 23px;
-    padding-top: 4px;
-}
-
 
 #faqSito h2, #faqSito h3
 {
@@ -428,6 +403,7 @@ p
 #faqSito h3
 {
     font-size: 20px;
+    margin-top: 10px;
 }
 
 #faqSito p, #faqSito h6
@@ -447,7 +423,7 @@ p
 }
 
 /* CSS PROFILO */
-#formDiv label::after
+#profileForm label::after
 {
     content: '\A';
     white-space: pre;
@@ -459,85 +435,394 @@ p
     margin-right:0px;
    /* border-radius: 5px;*/
     /*box-shadow: 0 0 10px rgba(0,9,0,0.5);*/
-    padding: 20px;
+    padding: 15px;
     padding-left: 0px;
-    padding-top: 1px;
+    padding-top: 0px;
+    width: 500px;
+}
+
+#profileForm label, #profileForm button
+{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    padding-right: 25px;
 }
 
 #profileForm label
 {
-    font-size: 20px;
-    padding-left:10px;
-    width:125px;
-    display:inline-block;
+    text-align: left;
+    font-size: 25px;
 }
 
-#profileForm
+#profileForm input, #profileForm textarea
 {
     display: inline-block;
-    float: left;
+    float: right;
+    clear: right;
+}
+
+#profileForm input
+{
+    width: 41%;
+}
+
+#profileForm textarea
+{
+    width: 40%
+}
+
+#profileForm input
+{
+    margin-top: 2px;
+}
+
+#profileForm button::before
+{
+  content: '\A';
+  white-space: pre;
+}
+
+#profilePic
+{
     position: relative;
+    bottom: 130px;
+    width: 80px;
+    height: auto;
+    padding-left: 9px;
+    padding-top: 4px;
+    padding-right: 20px;
 }
 
-#formDiv button
+#profilePic, #profileForm
 {
-    width: 300px;
-    margin-left: 10px;
+    display: inline-table;
 }
 
-#formDiv textArea, #formDiv #userDataNascita
+#profileForm button
 {
-    width: 167px;
+    width: 100%;
+    margin-top: 10px;
 }
-
-#formDiv
-{
-    position: relative;
-    top: -68px;
-}
-
 /* CSS CONDIVISO */
 
 
-#nameLogOut
+#logOut
 {
     position: absolute;
-    top: 5px;
-    left: 1700px;
+    top: 3%;
+    margin-left: 89%;
+    float: right;
+    overflow: hidden;
 }
 
-#nameLogOut h3
+#logOut h3
 {
     color: #ffffff;
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 20px;
+    float: right;
+    clear: both;
 }
 
-#nameLogOut a
-{
-    height: 200px;
-}
-
-#nameLogOut h3, .iconPic
+#logOut h3, .iconPic
 {
     display: inline-block;
 }
 
-#nameLogOut a::before
+#logOut a::before
 {
     content: '\A';
     white-space: pre;
 }
 
-#nameLogOut p
+#logOut p
 {
     font: 20px/15px "Calibri", "Times New Roman", Arial, sans-serif;
     margin: 0px;
-    padding-left: 50px;
+    padding-left: 20px;
+    position: relative;
+    top: 3%;
+}
+
+#imgLogOut
+{
+    float: left;
+    clear: left;
+    padding-right: 5px;
+}
+
+#nameLogOut
+{
+    float: right;
+    clear: right;
 }
 
 .iconPic
 {
     width: 30px;
     height: 30px;
+
+}
+
+.sideBar
+{
+    background-color: #ffffff;
+    margin-top: 1px;
+    margin-right: 51px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    float: left;
+    clear: right;
+    height: 100%;
+}
+
+.sideList li
+{
+    list-style-type: none;
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 23px;
+    padding-top: 4px;
+}
+
+#sidePersone li
+{
+    background-image: url(/ProgettoAMM/Assets/personeIcon.png);
+}
+
+#sideGruppi li
+{
+    background-image: url(/ProgettoAMM/Assets/gruppiIcon.png);
+}
+
+label:after, button:before
+{
+    content: '\A';
+    white-space: pre;
+}
+
+.sideBar, #divBody
+{
+    display: inline-table;
+}
+
+@media only screen and (max-width: 480px)
+{
+    /* margini automatici per tutto*/
+    header
+    {
+        height: 80px;
+    }
+    
+    header h1
+    {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+    
+    header nav
+    {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+    }
+    
+    header nav a
+    {
+        font-size: 15px;
+        padding: 1px;
+    }
+    
+    header nav a.active
+    {
+        padding: 1px;
+    }
+    
+    #header nav li
+    {
+        padding-left: 10px;
+    }
+    
+     .post, #post1, #post2, #post3 
+    {
+        width: 50%;
+        height: auto;
+    }
+   
+    #linkedImg
+    {
+        padding-left: 4px;
+    }
+    
+    .post a
+    {
+        word-wrap: break-word;
+    }
+    
+    #logOut
+    {
+        position: absolute;
+        top: 1%;
+        right: 5%;
+        width: 30%;
+        height: auto;
+    }
+    
+    #logOut h3
+    {
+        font-size: 15px;
+    }
+    
+    .sideBar, #side1
+    {
+        display: none;
+        clear: right;
+    }
+    
+    #contPost, .bodyBacheca,.bodyDescrizione, .bodyProfilo
+    {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        float: left;
+    }
+    
+    .bodyBacheca, .bodyDescrizione, .bodyProfilo
+    {
+        position: relative;
+        left: 3%;
+        top: 45%;
+    }
+    
+    #intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
+    {
+        width: 90%;
+        margin-left: 10%;
+    }
+    
+    .bodyProfilo
+    {
+        display: block;
+    }
+    
+    #profilePic
+    {
+        position: relative;
+        bottom: 60%;
+        left: 30%;
+    }
+    
+    #profileForm label::after
+    {
+        content: '\A';
+        white-space: pre;
+        float: left;
+        clear: both;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px)
+{
+    /*idem come sorpa*/
+        header
+    {
+        height: 80px;
+    }
+    
+    header h1
+    {
+        font-size: 25px;
+        padding-left: 20px;
+    }
+    
+    header nav
+    {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+    }
+    
+    header nav a
+    {
+        font-size: 20px;
+        padding: 1px;
+    }
+    
+    header nav a.active
+    {
+        padding: 1px;
+    }
+    
+    #header nav li
+    {
+        padding-left: 10px;
+    }
+    
+    .post, #post1, #post2, #post3, #intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
+    {
+        width: 80%;
+        height: auto;
+    }
+    
+    .post, #post1, #post2, #post3
+    {
+        margin-left: 40%;
+    }
+    
+    #intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
+    {
+        word-wrap: break-word;
+    }
+   
+    #linkedImg
+    {
+        padding-left: 4px;
+    }
+    
+    .post a
+    {
+        word-wrap: break-word;
+    }
+    
+    #logOut
+    {
+        position: absolute;
+        top: 1%;
+        right: 5%;
+        width: 16%;
+        height: auto;
+    }
+    
+    #logOut h3
+    {
+        font-size: 15px;
+    }
+    
+    .sideBar, #side1
+    {
+        
+        clear: right;
+    }
+    
+    #contPost, .bodyBacheca,.bodyDescrizione, .bodyProfilo
+    {
+        width: 80%;
+        height: auto;
+        margin: auto;
+    }
+    
+    .bodyBacheca
+    {
+        position: relative;
+        left: 3%;
+        top: 45%;
+    }
+    
+    #faqSito, #intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
+    {
+        margin-right: 5%;
+    }
 }

@@ -17,10 +17,14 @@ and open the template in the editor.
         <header>
             <div title="login">
                 <h1>NerdBook</h1>
-                <div id="nameLogOut">
-                    <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="/ProgettoAMM/Assets/images.png">
-                    <h3>Davide Fara</h3>
-                    <p id="logoutP"><a href="login.html" target="_blank">Logout</a></p>
+                <div id="logOut">
+                    <div id="imgLogOut">
+                        <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="/ProgettoAMM/Assets/logOutPic.png">
+                    </div>
+                    <div id="nameLogOut">
+                        <h3>Davide Fara</h3>
+                        <p><a href="login.html" target="_blank">Logout</a></p>
+                    </div>
                 </div>
             </div>
             <nav>
@@ -56,27 +60,22 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div id="divBody">
-            
+        <div class="bodyProfilo" id="divBody">  
+            <img id="profilePic" title="profilePic" alt="profilePic" src="/ProgettoAMM/Assets/profPicIcon.png">
             <form id="profileForm" action="#" method="post">
-                <div id="imgDiv">
-                    <img class="formPic" title="fotoProfiloForm" alt="fotoProfiloForm" src="/ProgettoAMM/Assets/images.jpg">
-                </div>
-                <div id="formDiv">
-                    <label for="userNome">Nome</label>
-                    <input type="text" name="userNome" id="userNome"/>
-                    <label for="userCognome">Cognome</label>
-                    <input type="text" name="userCognome" id="userCognome"/>
-                    <label for="userDataNascita">Nato il</label>
-                    <input type="date" name="userDataNascita" id="userDataNascita"/>
-                    <label for="userFraseDescrizione">Frase di presentazione</label>
-                    <textarea name="userFraseDescrizione" id="userFraseDescrizione"></textarea>
-                    <label for="userPass">Password</label>
-                    <input type="password" name="userPass" id="userPass"/>
-                    <label for="userConfermaPass">Conferma la Password</label>
-                    <input type="password" name="userConfermaPass" id="userConfermaPass"/>
-                    <button type="submit">Invia</button>
-                </div>
+                <label for="userNome">Nome</label>
+                <input type="text" name="userNome" id="userNome"/>
+                <label for="userCognome">Cognome</label>
+                <input type="text" name="userCognome" id="userCognome"/>
+                <label for="userDataNascita">Nato il</label>
+                <input type="date" name="userDataNascita" id="userDataNascita"/>
+                <label for="userFraseDescrizione">Frase di presentazione</label>
+                <textarea name="userFraseDescrizione" id="userFraseDescrizione"></textarea>
+                <label for="userPass">Password</label>
+                <input type="password" name="userPass" id="userPass"/>
+                <label for="userConfermaPass">Conferma la Password</label>
+                <input type="password" name="userConfermaPass" id="userConfermaPass"/>
+                <button type="submit">Invia</button>
             </form>
         </div>
     </body>
