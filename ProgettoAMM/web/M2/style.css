@@ -27,11 +27,6 @@ a:hover
     text-decoration: none;
 }
 
-form:hover:focus
-{
-    color: aquamarine;
-}
-
 input:focus, textArea:focus
 {
     color: aquamarine;
@@ -169,7 +164,7 @@ p
 #divBody
 {
     margin-top: 0px;
-    float: left;
+    float: none;
     padding-left: 0px;
 }
 
@@ -289,7 +284,7 @@ p
 #post1, #post2, #post3
 {
     position: relative;
-    width: 1000px;
+    width: 80%;
     height: auto;
 }
 
@@ -298,6 +293,7 @@ p
     background-color: #edf4f9;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    width: 80%;
 }
 
 .post p
@@ -333,7 +329,7 @@ p
 .bodyBacheca, .bodyDescrizione, .bodyProfilo
 {
     position: relative;
-    width: 1000px;
+    width: 80%;
     height: auto;
     left: 330px;
     clear: both;
@@ -352,7 +348,7 @@ p
     margin-left: 7px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    float: left;
+    float: none;
     height: 100%;
     width: 300px;
 }
@@ -431,20 +427,20 @@ p
 
 #profileForm
 {
-    /*background-color: #ffffff;*/
-    margin-right:0px;
-   /* border-radius: 5px;*/
-    /*box-shadow: 0 0 10px rgba(0,9,0,0.5);*/
+    margin-right: 0px;
     padding: 15px;
     padding-left: 0px;
     padding-top: 0px;
-    width: 500px;
+    width: 50%;
+    position: relative;
+    top: 45%;
+    bottom: 60px;
 }
 
 #profileForm label, #profileForm button
 {
     display: inline-block;
-    float: left;
+    float: none;
     clear: left;
     width: 250px;
     padding-right: 25px;
@@ -487,7 +483,7 @@ p
 #profilePic
 {
     position: relative;
-    bottom: 130px;
+    bottom: 0px;
     width: 80px;
     height: auto;
     padding-left: 9px;
@@ -549,7 +545,7 @@ p
 
 #imgLogOut
 {
-    float: left;
+    float: none;
     clear: left;
     padding-right: 5px;
 }
@@ -574,7 +570,7 @@ p
     margin-right: 51px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    float: left;
+    float: none;
     clear: right;
     height: 100%;
 }
@@ -676,10 +672,11 @@ label:after, button:before
         font-size: 15px;
     }
     
-    .sideBar, #side1
+    .sideBar
     {
-        display: none;
+        
         clear: right;
+        margin-left: 10%;
     }
     
     #contPost, .bodyBacheca,.bodyDescrizione, .bodyProfilo
@@ -687,14 +684,28 @@ label:after, button:before
         width: 80%;
         height: auto;
         margin: auto;
-        float: left;
+        float: none;
     }
     
     .bodyBacheca, .bodyDescrizione, .bodyProfilo
     {
         position: relative;
-        left: 3%;
-        top: 45%;
+        left: 1%;
+    }
+    
+    .bodyDescrizione
+    {
+        top: 220px;
+    }
+    
+    .bodyBacheca
+    {
+        top: 350px;
+    }
+    
+    .bodyProfilo
+    {
+        top: 370px;
     }
     
     #intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
@@ -711,16 +722,44 @@ label:after, button:before
     #profilePic
     {
         position: relative;
-        bottom: 60%;
-        left: 30%;
+        bottom: 40px;
+        left: 35%;
+    }
+    
+    #profileForm
+    {
+        width: 10%;
+        margin-left: 5%
     }
     
     #profileForm label::after
     {
-        content: '\A';
+        content: '\A\';
         white-space: pre;
-        float: left;
-        clear: both;
+        text-align: center;
+    }
+    
+    #profileForm input
+    {
+        width: 100%;
+    }
+    
+    #profileForm textarea
+    {
+        width: 99%;
+    }
+
+    #profileForm button
+    {
+        width: 101%;
+        position: relative;
+        right: 1%;
+    }
+
+    #profileForm button
+    {
+        padding-left: 0px;
+        margin-right: 10px;
     }
 }
 
@@ -809,9 +848,10 @@ label:after, button:before
     
     #contPost, .bodyBacheca,.bodyDescrizione, .bodyProfilo
     {
-        width: 80%;
+        width: 75%;
         height: auto;
         margin: auto;
+        float: none;
     }
     
     .bodyBacheca
