@@ -734,7 +734,7 @@ label:after, button:before
     
     #profileForm label::after
     {
-        content: '\A\';
+        content: '\A';
         white-space: pre;
         text-align: center;
     }
