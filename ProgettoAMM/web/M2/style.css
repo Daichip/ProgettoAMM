@@ -457,7 +457,7 @@ p
 
 #profileForm textarea
 {
-    width: 40%
+    width: 40.5%
 }
 
 #profileForm input
@@ -493,7 +493,11 @@ p
     margin-top: 10px;
 }
 /* CSS CONDIVISO */
-
+input, textarea, button
+{
+    border: 1px solid;
+    border-color: #030f23;
+}
 
 #logOut
 {
@@ -696,13 +700,13 @@ label:after, button:before
     {
         position: relative;
         bottom: 40px;
-        left: 35%;
+        left: 40%;
     }
     
     #profileForm
     {
         width: 10%;
-        margin-left: 5%
+        margin-left: 10%
     }
     
     #profileForm label::after
@@ -727,12 +731,9 @@ label:after, button:before
         width: 101%;
         position: relative;
         right: 1%;
-    }
-
-    #profileForm button
-    {
         padding-left: 0px;
         margin-right: 10px;
+        border: solid 2px;
     }
 }
 
