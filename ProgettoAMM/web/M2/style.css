@@ -366,15 +366,6 @@ p
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
 }
 
-#subList li
-{
-    font-size: 20px;
-    margin-right: 15px;
-    margin-left: 15px;
-    background-image: url(/ProgettoAMM/Assets/linkIcon.png);
-
-}
-
 #subList ul
 {
     padding-left: 0px;
@@ -574,25 +565,6 @@ p
     float: none;
     clear: right;
     height: 100%;
-}
-
-.sideList li
-{
-    list-style-type: none;
-    background-repeat: no-repeat;
-    background-position: 0px 5px;
-    padding-left: 23px;
-    padding-top: 4px;
-}
-
-#sidePersone li
-{
-    background-image: url(/ProgettoAMM/Assets/personeIcon.png);
-}
-
-#sideGruppi li
-{
-    background-image: url(/ProgettoAMM/Assets/gruppiIcon.png);
 }
 
 label:after, button:before
@@ -866,4 +838,39 @@ label:after, button:before
     {
         margin-right: 5%;
     }
+}
+
+/* Immagini decorative */
+/*
+*
+* Queste immagini sono decorative in quanto esterne l'HTML e dedite solo all'abbellimento estetico della pagina come disegnata dal Browser
+*
+*/
+
+.sideList li
+{
+    list-style-type: none;
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: 23px;
+    padding-top: 4px;
+}
+
+#sidePersone li
+{
+    background-image: url(/ProgettoAMM/Assets/personeIcon.png);
+}
+
+#sideGruppi li
+{
+    background-image: url(/ProgettoAMM/Assets/gruppiIcon.png);
+}
+
+#subList li
+{
+    font-size: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+    background-image: url(/ProgettoAMM/Assets/linkIcon.png);
+
 }
