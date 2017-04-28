@@ -1,9 +1,11 @@
+<%-- 
+    Document   : descrizione
+    Created on : 26-apr-2017, 11.56.41
+    Author     : Davide Fara
+--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>NerdBook: Descrizione</title>
@@ -14,39 +16,12 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
     <body>
-        <!--
-        <header>
-            <div id="title">
-                <h1>NerdBook</h1>
-                <div id="logOut">
-                    <div id="imgLogOut">
-                        <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="/ProgettoAMM/Assets/logOutPic.png">
-                    </div>
-                    <div id="nameLogOut">
-                        <h3>Davide Fara</h3>
-                        <p><a href="login.html" target="_blank">Logout</a></p>
-                    </div>
-                </div>
-            </div>
-            <nav>
-                <ol>
-                    <li><a class="active" href="descrizione.html" target="_blank">Il Sito</a></li>
-                    <li><a href="login.html" target="_blank">Login</a></li>
-                    <li><a href="bacheca.html" target="_blank">Bacheca</a></li>
-                    <li><a href="profilo.html" target="_blank">Profilo</a></li>
-                </ol>
-            </nav>
-        </header>
-        -->
-        <div class="sideBar" id="subList">
-            <h2>Index</h2>
-            <ul class="sideList">
-                <li><a href="#faqSito">FAQ Sito</a></li>
-                <li><a href="#scopoEUtenti">A cosa serve e a chi è rivolto</a></li>
-                <li><a href="#comeIscriversi">Come iscriversi</a></li>
-                <li><a href="#sitoGratuito">Il sito è gratuito?</a></li>
-            </ul>
-        </div>
+        <c:set var="title" value="Bacheca Personale" scope="request"/>
+        <jsp:include page="header.jsp"/>
+
+        <c:set var="title" value="Bacheca Personale" scope="request"/>
+        <jsp:include page="sidebar1.jsp"/>
+        
         <div class="bodyDescrizione" id="divBody">
             <div id="faqSito">
                 <div id="intestazione">

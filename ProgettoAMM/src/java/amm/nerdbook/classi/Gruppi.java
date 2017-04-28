@@ -13,11 +13,15 @@ public class Gruppi {
    
     private String nomeGruppo;
     private int id;
+    private Utenti[] partecipanti;
     //private int numElementi;
     
     public Gruppi()
     {
         this.nomeGruppo = "";
+        this.id = -1;
+        this.partecipanti = null;
+        
     }
 
     
@@ -47,5 +51,19 @@ public class Gruppi {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * @return the partecipanti
+     */
+    public Utenti[] getPartecipanti() {
+        return partecipanti;
+    }
+
+    /**
+     * @param partecipanti the partecipanti to set
+     */
+    public void setPartecipanti(Utenti[] partecipanti) {
+        this.partecipanti = partecipanti;
     }
 }

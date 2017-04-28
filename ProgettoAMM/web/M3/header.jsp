@@ -5,7 +5,6 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <header>
     <div id="title">
         <h1>NerdBook</h1>
@@ -14,10 +13,11 @@
                 <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="/ProgettoAMM/Assets/logOutPic.png">
             </div>
             <div id="nameLogOut">
-                <h3>${utente.nome} ${utente.cognome}</h3>
+                <h3>SullaMontagnaNonc'èVita</h3>
                 <p><a href="login.html" target="_blank">Logout</a></p>
             </div>
         </div>
     </div>
-<!-- Possibile inclusione di nav.jsp -->
+    <c:set var="title" value="Bacheca Personale" scope="request"/>
+    <jsp:include page="nav.jsp"/>
 </header>

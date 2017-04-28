@@ -1,9 +1,11 @@
+<%-- 
+    Document   : login
+    Created on : 26-apr-2017, 11.56.55
+    Author     : Davide Fara
+--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>NerdBook: Login</title>
@@ -18,14 +20,8 @@ and open the template in the editor.
             <div title="login">
                 <h1>Login</h1>
             </div>
-            <nav>
-                <ol>
-                    <li><a href="descrizione.html" target="_blank">Il Sito</a></li>
-                    <li><a class="active" href="login.html" target="_blank">Login</a></li>
-                    <li><a href="bacheca.html" target="_blank">Bacheca</a></li>
-                    <li><a href="profilo.html" target="_blank">Profilo</a></li>
-                </ol>
-            </nav>
+            <c:set var="title" value="Bacheca Personale" scope="request"/>
+            <jsp:include page="nav.jsp"/>
         </header>
         
         <div id="contPost">
