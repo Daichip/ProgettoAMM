@@ -30,6 +30,7 @@ public class UtentiFactory {
         utente0.setFrasePresentazione("What can I say.. Hello?");
         utente0.setDataNascita("12-05-1996");
         utente0.setUrlFotoProfilo("/ProgettoAMM/Assets/adminPic.png");
+        utente0.setUsername("DF");
         utente0.setId(0);
 
         // Mario "Mario Mario" Rossi
@@ -41,6 +42,7 @@ public class UtentiFactory {
         utente1.setFrasePresentazione("I was once known as Jumpman, did you know that?");
         utente1.setDataNascita("09-07-1981");
         utente1.setUrlFotoProfilo("/ProgettoAMM/Assets/marioRossi.jpg");
+        utente1.setUsername("MMMR");
         utente1.setId(1);
         
         // Luca "Link" Verdi
@@ -52,6 +54,7 @@ public class UtentiFactory {
         utente2.setFrasePresentazione("I was once a hero, but now I am an explorer");
         utente2.setDataNascita("21-02-1986");
         utente2.setUrlFotoProfilo("/ProgettoAMM/Assets/lucaVerdi.jpg");
+        utente2.setUsername("LLV");
         utente2.setId(2);
         
         // Carlo "Shy Guy" Rossi
@@ -63,12 +66,27 @@ public class UtentiFactory {
         utente3.setFrasePresentazione("Nobody remembers me.. I am so sad");
         utente3.setDataNascita("09-10-1988");
         utente3.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
+        utente3.setUsername("CSGR");
         utente3.setId(3);
+        
+        // Not Pervenuto
+        Utenti utente4 = new Utenti();
+        utente4.setNome("Carlo");
+        //utente4.setCognome("Rossi");  //Rimosso per fare in modo che risulti incompleto
+        utente4.setPassword("IAmANobody");
+        utente4.setConfermaPassword("IAmANobody");
+        utente4.setFrasePresentazione("Nobody remembers me.. I am so sad");
+        utente4.setDataNascita("09-10-1988");
+        utente4.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
+        utente4.setUsername("DF");
+        utente4.setId(-1);
         
         listaUtenti.add(utente0);
         listaUtenti.add(utente1);
         listaUtenti.add(utente2);
         listaUtenti.add(utente3);
+        listaUtenti.add(utente4);
+        
     }
     
     public static UtentiFactory getInstance()

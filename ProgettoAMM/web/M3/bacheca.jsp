@@ -18,29 +18,23 @@
     <body>
         <c:set var="title" value="Bacheca Personale" scope="request"/>
         <jsp:include page="header.jsp"/>
-        <c:set var="title" value="Bacheca Personale" scope="request"/>
+        <c:set var="title" value="bacheca" scope="request"/>
         <jsp:include page="sidebar1.jsp"/>
         
         <div class="bodyBacheca" id="divBody">
             <div class="post">
                 <h1>Post:</h1>
             </div>
-            <div class="post" id="post1">
-                <img class="profilePic" title="fotoProfilo1" alt="fotoProfiloUt1" src="/ProgettoAMM/Assets/marioRossi.jpg">
-                <h3>Mario "Mario Mario" Rossi ha scritto:</h3>
-                <p>Mamma mia!</p>
-            </div>
-            <div class="post" id="post2">
-                <img class="profilePic" title="fotoProfilo2" alt="fotoProfiloUt2" src="/ProgettoAMM/Assets/lucaVerdi.jpg">
-                <h3>Luca "Link" Verdi ha condiviso una foto:</h3>
-                <img id="linkedImg" title="foto_condivisa" alt="Selfie" src="/ProgettoAMM/Assets/linkedImg.jpg">
-                <p>Selfie with a friend(?)</p>
-            </div>
-            <div class="post" id="post3">
-                <img class="profilePic" title="fotoProfilo3" alt="fotoProfiloUt3" src="/ProgettoAMM/Assets/carloRossi.gif">
-                <h3>Carlo "Shy Guy" Rossi ha condiviso un link:</h3>
-                <p>Guarda <a href="https://en.wikipedia.org/wiki/List_of_recurring_Mario_franchise_enemies#Shy_Guy" target="_blank">https://en.wikipedia.org/wiki/List_of_recurring_Mario_franchise_enemies#Shy_Guy</a> per scoprire qualcosa su di me!</p>
-            </div>
+            <c:forEach var="post" items="${posts}">
+                <div class="post" <!--id="post1-->">
+                    <c:if test="${post.TipoPost == 'TEXT'}">
+                        <p>${post.contenuto}</p>
+                    </c:if>
+                    <c:if test="${post.TipoPost == 'IMAGE'}">
+                        <img alt="Post con foto" src="${post.contenuto}">
+                    </c:if>
+                </div>
+            </c:forEach>
         </div>
     </body>
 </html>

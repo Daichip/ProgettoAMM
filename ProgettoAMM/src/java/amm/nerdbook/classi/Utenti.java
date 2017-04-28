@@ -18,6 +18,7 @@ public class Utenti {
     private String frasePresentazione;
     private String dataNascita;
     private String urlFotoProfilo;
+    private String username;
     private int id;
     
     
@@ -30,6 +31,7 @@ public class Utenti {
         this.frasePresentazione = "";
         this.dataNascita = "";
         this.urlFotoProfilo = "";
+        this.username = "";
         this.id = 0;
     }
     
@@ -143,6 +145,20 @@ public class Utenti {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
     
     

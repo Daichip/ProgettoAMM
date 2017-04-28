@@ -39,7 +39,7 @@
                     <h3>Q: Come ci si iscrive a NerdBook?</h3>
                     <p>Per iscriverti a NerdBook è sufficiente fornire un'email, una password, il codice fiscale e l'atto di proprietà della casa.</p>
                     <p>L'iscrizione è veloce ed intuitiva, basta conoscere le basi di giapponese ed essere fluenti in coreano!</p>
-                    <p>Clicca <a href="login.html" target="_blank">qui</a> per connetterti a NerdBook!</p>
+                    <p>Clicca <a href="login.jsp" target="_blank">qui</a> per connetterti a NerdBook!</p>
                 </div>    
                 <div id="sitoGratuito">   
                     <h3>Q: Il sito è gratuito?</h3>

@@ -20,7 +20,7 @@
             <div title="login">
                 <h1>Login</h1>
             </div>
-            <c:set var="title" value="Bacheca Personale" scope="request"/>
+            <c:set var="title" value="Login" scope="request"/>
             <jsp:include page="nav.jsp"/>
         </header>
         
@@ -30,7 +30,10 @@
                 <h1>NerdBook</h1>
             </div>
             <div id="divBody">
-                <form class="dataForm" id="loginForm" action="#" method="post">
+                <c:if test="${invalidData == true}">
+                    <div id="dataError">I dati inseriti non sono corretti</div>
+                </c:if>
+                <form class="dataForm" id="loginForm" action="Login" method="post">
                     <div id="insertData">
                         <label for="userId">Nome Utente</label>
                         <input type="text" name="userId" id="userId" placeholder="Inserire il nome utente"/>
