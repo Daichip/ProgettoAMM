@@ -13,14 +13,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Davide Fara">
         <meta name="keywords" content="Nerd Book social network friends about info">
+        
+        <base href="/ProgettoAMM/">
+        
         <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
     <body>
         <c:set var="title" value="Bacheca Personale" scope="request"/>
         <jsp:include page="header.jsp"/>
 
-        <c:set var="title" value="Bacheca Personale" scope="request"/>
-        <jsp:include page="sidebar1.jsp"/>
+        <div class="sideBar" id="subList">
+            <h2>Index</h2>
+            <ul class="sideList">
+                <li><a href="descrizione.jsp#faqSito">FAQ Sito</a></li>
+                <li><a href="descrizione.jsp#scopoEUtenti">A cosa serve e a chi è rivolto</a></li>
+                <li><a href="descrizione.jsp#comeIscriversi">Come iscriversi</a></li>
+                <li><a href="descrizione.jsp#sitoGratuito">Il sito è gratuito?</a></li>
+            </ul>
+        </div>
         
         <div class="bodyDescrizione" id="divBody">
             <div id="faqSito">

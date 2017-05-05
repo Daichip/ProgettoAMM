@@ -170,4 +170,11 @@ public class Utenti {
         return false;
     }
     
+    public String getNomeById(int id) {
+        return nome;
+    }
+    
+    public String getCognomeById(int id) {
+        return cognome;
+    }
 }

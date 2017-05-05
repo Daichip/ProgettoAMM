@@ -5,27 +5,18 @@
  */
 package amm.nerdbook.servlet;
 
-import amm.nerdbook.classi.Utenti;
-import amm.nerdbook.classi.UtentiFactory;
-import amm.nerdbook.classi.Post;
-import amm.nerdbook.classi.PostFactory;
-import amm.nerdbook.classi.Gruppi;
-import amm.nerdbook.classi.GruppiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *s
+ *
  * @author Davide Fara
  */
-@WebServlet(name = "Bacheca_old", urlPatterns = {"/Bacheca_old"})
-public class Bacheca_old extends HttpServlet {
+public class Descrizione extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,30 +29,11 @@ public class Bacheca_old extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         response.setContentType("text/html;charset=UTF-8");
-        //Acquisizione utente di cui mostrare la bacheca da parametro get
-        String user = request.getParameter("user");
-        int userID;
-
-        if(user != null){
-            userID = Integer.parseInt(user);
-        } else {
-            userID = 0; //Da sostituire con utente loggato
-        }
         
-        Utenti utente = UtentiFactory.getInstance().getUtenteById(userID);
-        if(utente != null){
-            request.setAttribute("utente", utente);
 
-            List<Post> posts = PostFactory.getInstance().getPostByAuthor(utente);
-            request.setAttribute("posts", posts);
-            
-            request.getRequestDispatcher("bacheca.jsp").forward(request, response);
-        } else {
-            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-        }
-        
+        request.getRequestDispatcher("descrizione.jsp").forward(request, response);
+        return;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -101,5 +73,6 @@ public class Bacheca_old extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>    
+    }// </editor-fold>
+
 }

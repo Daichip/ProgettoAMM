@@ -25,8 +25,8 @@ public class UtentiFactory {
         Utenti utente0 = new Utenti();
         utente0.setNome("Davide");
         utente0.setCognome("Fara");
-        utente0.setPassword("ProgettoAMMIsThePass");
-        utente0.setConfermaPassword("ProgettoAMMIsThePass");
+        utente0.setPassword("123");
+        utente0.setConfermaPassword("123");
         utente0.setFrasePresentazione("What can I say.. Hello?");
         utente0.setDataNascita("12-05-1996");
         utente0.setUrlFotoProfilo("/ProgettoAMM/Assets/adminPic.png");
@@ -37,8 +37,8 @@ public class UtentiFactory {
         Utenti utente1 = new Utenti();
         utente1.setNome("Mario");
         utente1.setCognome("Rossi");
-        utente1.setPassword("PrincessPeachILoveYou");
-        utente1.setConfermaPassword("PrincessPeachILoveYou");
+        utente1.setPassword("123");
+        utente1.setConfermaPassword("123");
         utente1.setFrasePresentazione("I was once known as Jumpman, did you know that?");
         utente1.setDataNascita("09-07-1981");
         utente1.setUrlFotoProfilo("/ProgettoAMM/Assets/marioRossi.jpg");
@@ -49,8 +49,8 @@ public class UtentiFactory {
         Utenti utente2 = new Utenti();
         utente2.setNome("Luca");
         utente2.setCognome("Verdi");
-        utente2.setPassword("ZeldaOrMipha");
-        utente2.setConfermaPassword("ZeldaOrMipha");
+        utente2.setPassword("123");
+        utente2.setConfermaPassword("123");
         utente2.setFrasePresentazione("I was once a hero, but now I am an explorer");
         utente2.setDataNascita("21-02-1986");
         utente2.setUrlFotoProfilo("/ProgettoAMM/Assets/lucaVerdi.jpg");
@@ -61,8 +61,8 @@ public class UtentiFactory {
         Utenti utente3 = new Utenti();
         utente3.setNome("Carlo");
         utente3.setCognome("Rossi");
-        utente3.setPassword("IAmANobody");
-        utente3.setConfermaPassword("IAmANobody");
+        utente3.setPassword("123");
+        utente3.setConfermaPassword("123");
         utente3.setFrasePresentazione("Nobody remembers me.. I am so sad");
         utente3.setDataNascita("09-10-1988");
         utente3.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
@@ -73,12 +73,12 @@ public class UtentiFactory {
         Utenti utente4 = new Utenti();
         utente4.setNome("Carlo");
         //utente4.setCognome("Rossi");  //Rimosso per fare in modo che risulti incompleto
-        utente4.setPassword("IAmANobody");
-        utente4.setConfermaPassword("IAmANobody");
-        utente4.setFrasePresentazione("Nobody remembers me.. I am so sad");
+        utente4.setPassword("123");
+        utente4.setConfermaPassword("123");
+        utente4.setFrasePresentazione("Nobody --- me.. I am so ---");
         utente4.setDataNascita("09-10-1988");
         utente4.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
-        utente4.setUsername("DF");
+        utente4.setUsername("NP");
         utente4.setId(-1);
         
         listaUtenti.add(utente0);
@@ -105,6 +105,17 @@ public class UtentiFactory {
                 return utente;
         }
         return null;
+    }
+    
+    public int getIdByUserAndPassword(String user, String pass)
+    {
+	for(Utenti utente : this.listaUtenti)
+	{
+		if(utente.getUsername().equals(user) && utente.getPassword().equals(pass)) // se la combo nome e pass è corretta rendo l'ID
+			return utente.getId();
+	}
+	
+	return -1; // se alla fine non trovo il utente rendo un ID non valido
     }
     
 }
