@@ -14,14 +14,14 @@ public class Post {
     public enum TipoPost { TEXT, IMAGE };
     
     private Utenti autore;
-    private int numPost;
+    private int idPost;
     private String contenuto;
     private TipoPost tipo;
     
     public Post()
     {
         this.autore = null;
-        this.numPost = 0;
+        this.idPost = 0;
         this.contenuto = "";
         this.tipo = TipoPost.TEXT;
     }
@@ -42,17 +42,17 @@ public class Post {
     }
 
     /**
-     * @return the numPost
+     * @return the idPost
      */
-    public int getNumPost() {
-        return numPost;
+    public int getIdPost() {
+        return idPost;
     }
 
     /**
-     * @param numPost the numPost to set
+     * @param idPost the idPost to set
      */
-    public void setNumPost(int numPost) {
-        this.numPost = numPost;
+    public void setIdPost(int idPost) {
+        this.idPost = idPost;
     }
 
     /**

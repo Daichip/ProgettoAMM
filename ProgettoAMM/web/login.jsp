@@ -21,6 +21,7 @@
                 <h1>Login</h1>
             </div>
             <c:set var="title" value="Login" scope="request"/>
+            <c:set var="page" value="Descrizione" scope="request"/>
             <jsp:include page="nav.jsp"/>
         </header>
         

@@ -43,7 +43,7 @@ public class Bacheca extends HttpServlet {
 
         if (sessione != null && sessione.getAttribute("loggedIn") != null && sessione.getAttribute("loggedIn").equals(true))
         {
-            String user = request.getParameter("username");
+            String user = request.getParameter("user");
             int userID;
             
             if (user != null)
@@ -56,7 +56,7 @@ public class Bacheca extends HttpServlet {
                 userID = loggedUserID;
             }
             
-            Utenti utente = UtentiFactory.getInstance().getUtenteById(0);
+            Utenti utente = UtentiFactory.getInstance().getUtenteById(userID);
             if (utente != null)
             {
                 request.setAttribute("utente", utente);
