@@ -8,9 +8,9 @@
 <!DOCTYPE html>
 <nav>
     <ol>
-        <li <c:if test="${page == 'descrizione'}">class="active"</c:if>><a href="descrizione.jsp" target="_blank">Il Sito</a></li>
-        <li <c:if test="${page == 'login'}">class="active"</c:if>> <a href="login.jsp" target="_blank">Login</a></li>
-        <li <c:if test="${page == 'bacheca'}">class="active"</c:if>><a href="bacheca.jsp" target="_blank">Bacheca</a></li>
-        <li <c:if test="${page == 'profilo'}">class="active"</c:if>><a href="profilo.jsp" target="_blank">Profilo</a></li>
+        <li <c:if test="${page == 'descrizione'}">class="active"</c:if>><a href="Descrizione" target="_blank">Il Sito</a></li>
+        <li <c:if test="${page == 'login'}">class="active"</c:if>> <a href="Login" target="_blank">Login</a></li>
+        <li <c:if test="${page == 'bacheca'}">class="active"</c:if>><a href="Bacheca" target="_blank">Bacheca</a></li>
+        <li <c:if test="${page == 'profilo'}">class="active"</c:if>><a href="Profilo" target="_blank">Profilo</a></li>
     </ol>
 </nav>

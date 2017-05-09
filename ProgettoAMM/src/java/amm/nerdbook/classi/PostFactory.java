@@ -33,13 +33,13 @@ public class PostFactory {
         Post post2 = new Post();
         post2.setAutore(utentiFactory.getUtenteById(2));
         post2.setIdPost(1);
-        post2.setContenuto("/ProgettoAMM/Assets/linkedImg.jpg  Selfie with a friend(?)");
+        post2.setContenuto("Assets/linkedImg.jpg");
         post2.setTipo(Post.TipoPost.IMAGE);
         
         Post post3 = new Post();
         post3.setAutore(utentiFactory.getUtenteById(3));
         post3.setIdPost(2);
-        post3.setContenuto("Guarda https://en.wikipedia.org/wiki/List_of_recurring_Mario_franchise_enemies#Shy_Guy per scoprire qualcosa su di me!");
+        post3.setContenuto("Guarda <a href=\"https://en.wikipedia.org/wiki/List_of_recurring_Mario_franchise_enemies#Shy_Guy\"> https://en.wikipedia.org/wiki/List_of_recurring_Mario_franchise_enemies#Shy_Guy </a> per scoprire qualcosa su di me!");
         post3.setTipo(Post.TipoPost.TEXT);
         
         listaPost.add(post1);
@@ -75,7 +75,9 @@ public class PostFactory {
         for(Post post : this.listaPost)
         {
             if(post.getAutore().equals(author))
+            {
                 listaPost.add(post);
+            }
         }
         return listaPost;
     }

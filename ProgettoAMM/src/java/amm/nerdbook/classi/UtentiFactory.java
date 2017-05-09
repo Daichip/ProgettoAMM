@@ -71,15 +71,15 @@ public class UtentiFactory {
         
         // Not Pervenuto
         Utenti utente4 = new Utenti();
-        utente4.setNome("Carlo");
+        utente4.setNome("Piero");
         //utente4.setCognome("Rossi");  //Rimosso per fare in modo che risulti incompleto
         utente4.setPassword("123");
         utente4.setConfermaPassword("123");
-        utente4.setFrasePresentazione("Nobody --- me.. I am so ---");
-        utente4.setDataNascita("09-10-1988");
-        utente4.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
+        //utente4.setFrasePresentazione("Nobody --- me.. I am so ---");
+        //utente4.setDataNascita("09-10-1988");
+        //utente4.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
         utente4.setUsername("NP");
-        utente4.setId(-1);
+        utente4.setId(4);
         
         listaUtenti.add(utente0);
         listaUtenti.add(utente1);

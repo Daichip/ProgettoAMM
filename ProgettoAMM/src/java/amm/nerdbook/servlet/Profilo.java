@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Davide Fara
  */
-public class Descrizione extends HttpServlet {
+public class Profilo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,8 +34,20 @@ public class Descrizione extends HttpServlet {
         
         
         HttpSession sessione = request.getSession();
+        
+        
+        if(sessione.getAttribute("loggedIn") != null)
+        {
+            //request.setAttribute("validData", true);
+            request.getRequestDispatcher("Profilo").forward(request, response);
+        }
+        else
+        {
+            request.setAttribute("profileError", true);
+            request.getRequestDispatcher("profilo.jsp").forward(request, response);
+        }
 
-        request.getRequestDispatcher("descrizione.jsp").forward(request, response);
+        request.getRequestDispatcher("profilo.jsp").forward(request, response);
         return;
     }
 

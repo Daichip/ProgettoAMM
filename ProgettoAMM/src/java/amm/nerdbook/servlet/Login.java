@@ -37,7 +37,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     // Passando come parametro false se la sessione non è mai stata creata, allora non viene creata. 
     // Scritta in questo modo, se è già creata, rende quella precedentemente creata
     
-    // Quando l'utente preme logout invalida la sessione
+    // Quando l'utente preme logout invalida la sessione   
     if (request.getParameter("logout") != null)
     {
         session.invalidate();
@@ -59,6 +59,22 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         if(username != null && password != null) // i due parametri non sono vuoti ed esistono
         {
             int loggedUserID = UtentiFactory.getInstance().getIdByUserAndPassword(username, password);
+            
+            //Se l'utente non ha registrato alcuni campi, viene rimandato al form per l'inserimento dei dati (Profilo)
+            if(UtentiFactory.getInstance().getUtenteById(loggedUserID).getNome() == null || 
+               UtentiFactory.getInstance().getUtenteById(loggedUserID).getCognome() == null || 
+               //UtentiFactory.getInstance().getUtenteById(loggedUserID).getPassword() == null || 
+               UtentiFactory.getInstance().getUtenteById(loggedUserID).getConfermaPassword() == null ||
+               UtentiFactory.getInstance().getUtenteById(loggedUserID).getDataNascita() == null ||
+               UtentiFactory.getInstance().getUtenteById(loggedUserID).getFrasePresentazione() == null ||  
+               UtentiFactory.getInstance().getUtenteById(loggedUserID).getUrlFotoProfilo() == null ||
+               //UtentiFactory.getInstance().getUtenteById(loggedUserID).getUsername() == null || 
+               UtentiFactory.getInstance().getUtenteById(loggedUserID).getId() < 0)
+            {
+                request.getRequestDispatcher("Profilo").forward(request, response);
+            }
+                
+            
             
             if(loggedUserID != -1)
             {

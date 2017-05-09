@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<c:set var="page" value="bacheca" scope="request"/>
+<c:set var="page" value="bacheca" scope="session"/>
 
 <div id="logOut">
     <div id="imgLogOut">
@@ -15,6 +15,6 @@
     </div>
     <div id="nameLogOut">
         <h3><c:out value="${utente.nome} ${utente.cognome}"/></h3>
-        <p><a href="Login?logout=true" target="_blank">Logout</a></p>
+        <p><a href="Login?logout=true">Logout</a></p>
     </div>
 </div>

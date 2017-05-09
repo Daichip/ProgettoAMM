@@ -69,10 +69,11 @@ public class Bacheca extends HttpServlet {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
         }
-        else
+        else // se l'utente non è loggato
         {
-            request.getRequestDispatcher("Login").forward(request, response);
-        }
+            request.getRequestDispatcher("Login").forward(request, response); // in questo modo, se non ho nessun utente loggato e vado in bacheca, mi rimanda al login
+        }   
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

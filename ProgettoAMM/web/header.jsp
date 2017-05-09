@@ -8,7 +8,7 @@
 <header>
     <div id="title">
         <h1>NerdBook</h1>
-        <c:set var="title" value="Bacheca Personale" scope="request"/>
+        <c:set var="title" value="Bacheca" scope="request"/>
         <jsp:include page="logoutBox.jsp"/>
     </div>
     <c:set var="title" value="Bacheca Personale" scope="request"/>

@@ -23,24 +23,29 @@
         <c:set var="title" value="Bacheca Personale" scope="request"/>
         <jsp:include page="sidebar1.jsp"/>
 
-        <div class="bodyProfilo" id="divBody">  
-            <img id="profilePic" title="profilePic" alt="profilePic" src="/ProgettoAMM/Assets/profPicIcon.png">
-            <form id="profileForm" action="#" method="post">
-                <label for="userNome">Nome</label>
-                <input type="text" name="userNome" id="userNome"/>
-                <label for="userCognome">Cognome</label>
-                <input type="text" name="userCognome" id="userCognome"/>
-                <label for="userDataNascita">Nato il</label>
-                <input type="date" name="userDataNascita" id="userDataNascita"/>
-                <label for="userFraseDescrizione">Frase di presentazione</label>
-                <textarea name="userFraseDescrizione" id="userFraseDescrizione"></textarea>
-                <label for="userPass">Password</label>
-                <input type="password" name="userPass" id="userPass"/>
-                <label for="userConfermaPass">Conferma la Password</label>
-                <input type="password" name="userConfermaPass" id="userConfermaPass"/>
-                <button type="submit">Invia</button>
-            </form>
-        </div>
+        <c:if test="${profileError == true}">
+            <div id="profileError">Devi essere loggato per vedere questa pagina. Clicca su <a href="Login"> Login </a> per loggarti</div>
+        </c:if>
+        <c:if test="${profileError != true}">                
+            <div class="bodyProfilo" id="divBody">  
+                <img id="profilePic" title="profilePic" alt="profilePic" src="/ProgettoAMM/Assets/profPicIcon.png">
+                <form id="profileForm" action="#" method="post">
+                    <label for="userNome">Nome</label>
+                    <input type="text" name="userNome" id="userNome"/>
+                    <label for="userCognome">Cognome</label>
+                    <input type="text" name="userCognome" id="userCognome"/>
+                    <label for="userDataNascita">Nato il</label>
+                    <input type="date" name="userDataNascita" id="userDataNascita"/>
+                    <label for="userFraseDescrizione">Frase di presentazione</label>
+                    <textarea name="userFraseDescrizione" id="userFraseDescrizione"></textarea>
+                    <label for="userPass">Password</label>
+                    <input type="password" name="userPass" id="userPass"/>
+                    <label for="userConfermaPass">Conferma la Password</label>
+                    <input type="password" name="userConfermaPass" id="userConfermaPass"/>
+                    <button type="submit">Invia</button>
+                </form>
+            </div>
+        </c:if> 
     </body>
 </html>
 
