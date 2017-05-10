@@ -5,8 +5,11 @@
  */
 package amm.nerdbook.servlet;
 
+import amm.nerdbook.classi.Utenti;
+import amm.nerdbook.classi.UtentiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,11 +38,19 @@ public class Profilo extends HttpServlet {
         
         HttpSession sessione = request.getSession();
         
+        //Per visualizzare gli utenti nella navbar
+        ArrayList<Utenti> userList = UtentiFactory.getInstance().getListaUtenti();
+        request.setAttribute("listaUtenti", userList);
         
         if(sessione.getAttribute("loggedIn") != null)
         {
             //request.setAttribute("validData", true);
-            request.getRequestDispatcher("Profilo").forward(request, response);
+            int userID;
+            Integer loggedUserID = (Integer)sessione.getAttribute("loggedUserID");
+            userID = loggedUserID;
+            Utenti utente = UtentiFactory.getInstance().getUtenteById(userID);
+            request.setAttribute("utente", utente);
+            request.getRequestDispatcher("profilo.jsp").forward(request, response);
         }
         else
         {

@@ -31,17 +31,23 @@
                 <img id="profilePic" title="profilePic" alt="profilePic" src="/ProgettoAMM/Assets/profPicIcon.png">
                 <form id="profileForm" action="#" method="post">
                     <label for="userNome">Nome</label>
-                    <input type="text" name="userNome" id="userNome"/>
+                    <input type="text" name="userNome" id="userNome" value="${utente.nome}"/>
                     <label for="userCognome">Cognome</label>
-                    <input type="text" name="userCognome" id="userCognome"/>
+                    <input type="text" name="userCognome" id="userCognome" value="${utente.cognome}"/>
+                    
+                    <label for="userURLPic">URL foto</label>
+                    <input type="text" name="userURLPic" id="userURLPic" value="${utente.urlFotoProfilo}"/>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" value="${utente.username}"/>
+                    
                     <label for="userDataNascita">Nato il</label>
-                    <input type="date" name="userDataNascita" id="userDataNascita"/>
+                    <input type="date" name="userDataNascita" id="userDataNascita" value="${utente.dataNascita}"/>
                     <label for="userFraseDescrizione">Frase di presentazione</label>
-                    <textarea name="userFraseDescrizione" id="userFraseDescrizione"></textarea>
+                    <textarea name="userFraseDescrizione" id="userFraseDescrizione">${utente.frasePresentazione} </textarea>
                     <label for="userPass">Password</label>
-                    <input type="password" name="userPass" id="userPass"/>
+                    <input type="password" name="userPass" id="userPass" value="${utente.password}"/>
                     <label for="userConfermaPass">Conferma la Password</label>
-                    <input type="password" name="userConfermaPass" id="userConfermaPass"/>
+                    <input type="password" name="userConfermaPass" id="userConfermaPass" value="${utente.confermaPassword}"/>
                     <button type="submit">Invia</button>
                 </form>
             </div>

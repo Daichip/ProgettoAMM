@@ -28,7 +28,7 @@ public class UtentiFactory {
         utente0.setPassword("123");
         utente0.setConfermaPassword("123");
         utente0.setFrasePresentazione("What can I say.. Hello?");
-        utente0.setDataNascita("12-05-1996");
+        utente0.setDataNascita("1996-05-12");
         utente0.setUrlFotoProfilo("/ProgettoAMM/Assets/adminPic.png");
         utente0.setUsername("DF");
         utente0.setId(0);
@@ -40,7 +40,7 @@ public class UtentiFactory {
         utente1.setPassword("123");
         utente1.setConfermaPassword("123");
         utente1.setFrasePresentazione("I was once known as Jumpman, did you know that?");
-        utente1.setDataNascita("09-07-1981");
+        utente1.setDataNascita("1981-07-09");
         utente1.setUrlFotoProfilo("/ProgettoAMM/Assets/marioRossi.jpg");
         utente1.setUsername("MMMR");
         utente1.setId(1);
@@ -52,7 +52,7 @@ public class UtentiFactory {
         utente2.setPassword("123");
         utente2.setConfermaPassword("123");
         utente2.setFrasePresentazione("I was once a hero, but now I am an explorer");
-        utente2.setDataNascita("21-02-1986");
+        utente2.setDataNascita("1986-02-21");
         utente2.setUrlFotoProfilo("/ProgettoAMM/Assets/lucaVerdi.jpg");
         utente2.setUsername("LLV");
         utente2.setId(2);
@@ -60,11 +60,11 @@ public class UtentiFactory {
         // Carlo "Shy Guy" Rossi
         Utenti utente3 = new Utenti();
         utente3.setNome("Carlo");
-        utente3.setCognome("Rossi");
+        utente3.setCognome("Neri");
         utente3.setPassword("123");
         utente3.setConfermaPassword("123");
         utente3.setFrasePresentazione("Nobody remembers me.. I am so sad");
-        utente3.setDataNascita("09-10-1988");
+        utente3.setDataNascita("1988-10-09");
         utente3.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
         utente3.setUsername("CSGR");
         utente3.setId(3);
@@ -72,7 +72,7 @@ public class UtentiFactory {
         // Not Pervenuto
         Utenti utente4 = new Utenti();
         utente4.setNome("Piero");
-        //utente4.setCognome("Rossi");  //Rimosso per fare in modo che risulti incompleto
+        utente4.setCognome("Azzurri");  //Rimosso per fare in modo che risulti incompleto
         utente4.setPassword("123");
         utente4.setConfermaPassword("123");
         //utente4.setFrasePresentazione("Nobody --- me.. I am so ---");
@@ -116,6 +116,11 @@ public class UtentiFactory {
 	}
 	
 	return -1; // se alla fine non trovo il utente rendo un ID non valido
+    }
+    
+    public ArrayList<Utenti> getListaUtenti()
+    {
+        return listaUtenti;
     }
     
 }

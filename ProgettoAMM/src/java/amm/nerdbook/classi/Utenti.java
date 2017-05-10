@@ -24,14 +24,14 @@ public class Utenti {
     
     public Utenti()
     {
-        this.nome = null;
-        this.cognome = null;
-        this.password = null;
-        this.confermaPassword = null;
-        this.frasePresentazione = null;
-        this.dataNascita = null;
-        this.urlFotoProfilo = null;
-        this.username = null;
+        this.nome = "";
+        this.cognome = "";
+        this.password = "";
+        this.confermaPassword = "";
+        this.frasePresentazione = "";
+        this.dataNascita = "";
+        this.urlFotoProfilo = "";
+        this.username = "";
         this.id = -1;
     }
     

@@ -11,6 +11,7 @@ import amm.nerdbook.classi.Utenti;
 import amm.nerdbook.classi.UtentiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,7 +41,11 @@ public class Bacheca extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         HttpSession sessione = request.getSession(false);
-
+        
+        //Per visualizzare gli utenti nella navbar
+        ArrayList<Utenti> userList = UtentiFactory.getInstance().getListaUtenti();
+        request.setAttribute("listaUtenti", userList);
+        
         if (sessione != null && sessione.getAttribute("loggedIn") != null && sessione.getAttribute("loggedIn").equals(true))
         {
             String user = request.getParameter("user");

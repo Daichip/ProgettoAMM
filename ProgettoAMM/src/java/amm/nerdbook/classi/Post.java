@@ -11,11 +11,12 @@ package amm.nerdbook.classi;
  */
 public class Post {
 
-    public enum TipoPost { TEXT, IMAGE };
+    public enum TipoPost { TEXT, IMAGE, TEXTIMAGE, TEXTLINK, LINK };
     
     private Utenti autore;
     private int idPost;
     private String contenuto;
+    private String urlPost;
     private TipoPost tipo;
     
     public Post()
@@ -23,6 +24,7 @@ public class Post {
         this.autore = null;
         this.idPost = 0;
         this.contenuto = "";
+        this.urlPost = "";
         this.tipo = TipoPost.TEXT;
     }
     
@@ -60,6 +62,20 @@ public class Post {
      */
     public String getContenuto() {
         return contenuto;
+    }
+
+    /**
+     * @return the urlPost
+     */
+    public String getUrlPost() {
+        return urlPost;
+    }
+
+    /**
+     * @param urlPost the urlPost to set
+     */
+    public void setUrlPost(String urlPost) {
+        this.urlPost = urlPost;
     }
 
     /**

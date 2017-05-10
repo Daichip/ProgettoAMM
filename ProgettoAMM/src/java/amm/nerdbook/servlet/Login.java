@@ -5,6 +5,7 @@
  */
 package amm.nerdbook.servlet;
 
+import amm.nerdbook.classi.*;
 import amm.nerdbook.classi.UtentiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,20 +61,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         {
             int loggedUserID = UtentiFactory.getInstance().getIdByUserAndPassword(username, password);
             
-            //Se l'utente non ha registrato alcuni campi, viene rimandato al form per l'inserimento dei dati (Profilo)
-            if(UtentiFactory.getInstance().getUtenteById(loggedUserID).getNome() == null || 
-               UtentiFactory.getInstance().getUtenteById(loggedUserID).getCognome() == null || 
-               //UtentiFactory.getInstance().getUtenteById(loggedUserID).getPassword() == null || 
-               UtentiFactory.getInstance().getUtenteById(loggedUserID).getConfermaPassword() == null ||
-               UtentiFactory.getInstance().getUtenteById(loggedUserID).getDataNascita() == null ||
-               UtentiFactory.getInstance().getUtenteById(loggedUserID).getFrasePresentazione() == null ||  
-               UtentiFactory.getInstance().getUtenteById(loggedUserID).getUrlFotoProfilo() == null ||
-               //UtentiFactory.getInstance().getUtenteById(loggedUserID).getUsername() == null || 
-               UtentiFactory.getInstance().getUtenteById(loggedUserID).getId() < 0)
-            {
-                request.getRequestDispatcher("Profilo").forward(request, response);
-            }
-                
+            
             
             
             if(loggedUserID != -1)
@@ -81,8 +69,23 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
                 session.setAttribute("loggedIn", true);
                 session.setAttribute("loggedUserID", loggedUserID);
                 // Così memorizzo in sessione le variabili che mi servono per loggare l'utente
+                
+                Utenti utente = UtentiFactory.getInstance().getUtenteById(loggedUserID);
 
-                request.getRequestDispatcher("Bacheca").forward(request, response); // ora che è loggato lo redirigo alla bacheca
+                //Se l'utente non ha registrato alcuni campi, viene rimandato al form per l'inserimento dei dati (Profilo)
+                if(utente.getNome().equals("") || 
+                   utente.getCognome().equals("") || 
+                   utente.getFrasePresentazione().equals("") ||  
+                   utente.getUrlFotoProfilo().equals(""))
+                {
+                    request.getRequestDispatcher("Profilo").forward(request, response);
+                }
+                else
+                {
+                    request.getRequestDispatcher("Bacheca").forward(request, response); // ora che è loggato lo redirigo alla bacheca
+                }
+                        
+            
                 return; // chiudo la servlet
             }
             else

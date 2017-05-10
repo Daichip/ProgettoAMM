@@ -28,11 +28,12 @@
             </div>
             <c:forEach var="post" items="${posts}">
                 <div class="post" <!--id="post1-->">
-                    <c:if test="${post.tipo == 'TEXT'}">
+                    <c:if test="${post.tipo == 'TEXT' || post.tipo == 'TEXTLINK' || post.tipo == 'LINK'}">
                         <p>${post.contenuto}</p>
                     </c:if>
-                    <c:if test="${post.tipo == 'IMAGE'}">
-                        <img id="linkedImg" alt="Post con foto" src="${post.contenuto}"/>
+                    <c:if test="${post.tipo == 'IMAGE' || post.tipo == 'TEXTIMAGE'}">
+                        <img id="linkedImg" alt="Post con foto" src="${post.urlPost}"/>
+                        <p><c:out value="${post.contenuto}"/></p>
                     </c:if>
                 </div>
             </c:forEach>

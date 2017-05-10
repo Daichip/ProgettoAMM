@@ -10,9 +10,9 @@
     <h2>Persone</h2>
     <nav class="sideList" id="sidePersone">
         <ul>
-            <li>Mario "Mario Mario" Rossi</li>
-            <li>Luca "Link" Verdi</li>
-            <li>Carlo "Shy Guy" Rossi</li>
+            <c:forEach var="utente" items="${listaUtenti}">
+                <li><a href="Bacheca?user=${utente.id}"> ${utente.nome} ${utente.cognome} </a></li>
+            </c:forEach>
         </ul>
     </nav>
     <h2>Gruppi</h2>

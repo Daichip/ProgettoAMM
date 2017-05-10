@@ -5,6 +5,8 @@
  */
 package amm.nerdbook.servlet;
 
+import amm.nerdbook.classi.Utenti;
+import amm.nerdbook.classi.UtentiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -34,7 +36,13 @@ public class Descrizione extends HttpServlet {
         
         
         HttpSession sessione = request.getSession();
-
+        
+        int userID;
+        Integer loggedUserID = (Integer)sessione.getAttribute("loggedUserID");
+        userID = loggedUserID;
+        Utenti utente = UtentiFactory.getInstance().getUtenteById(userID);
+        request.setAttribute("utente", utente);
+        
         request.getRequestDispatcher("descrizione.jsp").forward(request, response);
         return;
     }
