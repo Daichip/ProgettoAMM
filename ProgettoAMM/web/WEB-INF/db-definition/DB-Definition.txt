@@ -1,0 +1,26 @@
+Utenti
+- ID (Primaria)
+- Nome
+- Cognome
+- Password
+- Conferma Password
+- Frase di presentazione
+- Data di Nascita
+- URL foto profilo
+- Username
+
+Gruppi
+- ID (Primaria)
+- Nome Gruppo
+- Partecipanti
+
+Post
+- ID (Primaria)
+- Autore
+- Contenuto
+- URL
+- Tipo
+
+
+Post.Autore == Utenti.ID
+Gruppi.Partecipanti == Utenti.ID

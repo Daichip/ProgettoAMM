@@ -19,7 +19,7 @@ public class Utenti {
     private String dataNascita;
     private String urlFotoProfilo;
     private String username;
-    private int id;
+    private int idUtente;
     
     
     public Utenti()
@@ -32,7 +32,7 @@ public class Utenti {
         this.dataNascita = "";
         this.urlFotoProfilo = "";
         this.username = "";
-        this.id = -1;
+        this.idUtente = -1;
     }
     
     /**
@@ -137,14 +137,14 @@ public class Utenti {
      * @return the id
      */
     public int getId() {
-        return id;
+        return idUtente;
     }
 
     /**
      * @param id the id to set
      */
     public void setId(int id) {
-        this.id = id;
+        this.idUtente = id;
     }
 
     /**

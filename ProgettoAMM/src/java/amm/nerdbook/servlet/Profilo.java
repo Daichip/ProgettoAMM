@@ -48,8 +48,23 @@ public class Profilo extends HttpServlet {
             int userID;
             Integer loggedUserID = (Integer)sessione.getAttribute("loggedUserID");
             userID = loggedUserID;
+            
             Utenti utente = UtentiFactory.getInstance().getUtenteById(userID);
-            request.setAttribute("utente", utente);
+
+            if(request.getParameter("update") != null)
+            {
+                request.setAttribute("userNome", request.getParameter("userNome"));
+                request.setAttribute("userCognome", request.getParameter("userCognome"));
+                request.setAttribute("userURLPic", request.getParameter("userURLPic"));
+                request.setAttribute("userDataNascita", request.getParameter("userDataNascita"));
+                request.setAttribute("userFraseDescrizione", request.getParameter("userFraseDescrizione"));
+                request.setAttribute("userPass", request.getParameter("userPass"));
+                
+                request.setAttribute("update", true);
+            }
+            else
+                request.setAttribute("utente", utente);
+
             request.getRequestDispatcher("profilo.jsp").forward(request, response);
         }
         else

@@ -35,13 +35,7 @@ public class Descrizione extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         
-        HttpSession sessione = request.getSession();
-        
-        int userID;
-        Integer loggedUserID = (Integer)sessione.getAttribute("loggedUserID");
-        userID = loggedUserID;
-        Utenti utente = UtentiFactory.getInstance().getUtenteById(userID);
-        request.setAttribute("utente", utente);
+        HttpSession sessione = request.getSession(false);
         
         request.getRequestDispatcher("descrizione.jsp").forward(request, response);
         return;

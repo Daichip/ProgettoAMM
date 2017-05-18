@@ -14,7 +14,7 @@
         <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="/ProgettoAMM/Assets/logOutPic.png">
     </div>
     <div id="nameLogOut">
-        <h3><c:out value="${utente.nome} ${utente.cognome}"/></h3>
+        <h3><c:out value="${currentUserInfo}"/></h3>
         <p><a href="Login?logout=true">Logout</a></p>
     </div>
 </div>

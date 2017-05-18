@@ -39,7 +39,7 @@ public class UtentiFactory {
         utente1.setCognome("Rossi");
         utente1.setPassword("123");
         utente1.setConfermaPassword("123");
-        utente1.setFrasePresentazione("I was once known as Jumpman, did you know that?");
+        utente1.setFrasePresentazione("I was once known as Jumpman");
         utente1.setDataNascita("1981-07-09");
         utente1.setUrlFotoProfilo("/ProgettoAMM/Assets/marioRossi.jpg");
         utente1.setUsername("MMMR");
@@ -51,7 +51,7 @@ public class UtentiFactory {
         utente2.setCognome("Verdi");
         utente2.setPassword("123");
         utente2.setConfermaPassword("123");
-        utente2.setFrasePresentazione("I was once a hero, but now I am an explorer");
+        utente2.setFrasePresentazione("I am a hero!");
         utente2.setDataNascita("1986-02-21");
         utente2.setUrlFotoProfilo("/ProgettoAMM/Assets/lucaVerdi.jpg");
         utente2.setUsername("LLV");
@@ -63,7 +63,7 @@ public class UtentiFactory {
         utente3.setCognome("Neri");
         utente3.setPassword("123");
         utente3.setConfermaPassword("123");
-        utente3.setFrasePresentazione("Nobody remembers me.. I am so sad");
+        utente3.setFrasePresentazione("Nobody remembers me..");
         utente3.setDataNascita("1988-10-09");
         utente3.setUrlFotoProfilo("/ProgettoAMM/Assets/carloRossi.gif");
         utente3.setUsername("CSGR");

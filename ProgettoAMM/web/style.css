@@ -842,10 +842,20 @@ label:after, button:before
 }
 
 
-/* MILESTONE 3 DIV ERRORE PROFILO */
+/* MILESTONE 3 */
 #profileError
 {
     padding-left: 350px;
+}
+
+#formNewPost
+{    
+    padding-bottom: 20px;
+}
+
+#postType #textType
+{
+    float: left;
 }
 
 /* Immagini decorative */

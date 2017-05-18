@@ -69,9 +69,13 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
                 session.setAttribute("loggedIn", true);
                 session.setAttribute("loggedUserID", loggedUserID);
                 // Così memorizzo in sessione le variabili che mi servono per loggare l'utente
+              
                 
                 Utenti utente = UtentiFactory.getInstance().getUtenteById(loggedUserID);
-
+                
+                //String currentUserInfo = utente.getNome() + utente.getCognome();
+                session.setAttribute("currentUserInfo", utente.getNome() + " " + utente.getCognome());
+                
                 //Se l'utente non ha registrato alcuni campi, viene rimandato al form per l'inserimento dei dati (Profilo)
                 if(utente.getNome().equals("") || 
                    utente.getCognome().equals("") || 

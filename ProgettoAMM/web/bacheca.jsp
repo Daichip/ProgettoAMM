@@ -21,11 +21,13 @@
         <jsp:include page="header.jsp"/>
         <c:set var="title" value="bacheca" scope="request"/>
         <jsp:include page="sidebar1.jsp"/>
-        
+                
         <div class="bodyBacheca" id="divBody">
             <div class="post">
                 <h1>Post:</h1>
             </div>
+            <c:set var="title" value="post" scope="request"/>
+            
             <c:forEach var="post" items="${posts}">
                 <div class="post" <!--id="post1-->">
                     <c:if test="${post.tipo == 'TEXT' || post.tipo == 'TEXTLINK' || post.tipo == 'LINK'}">

@@ -12,15 +12,15 @@ package amm.nerdbook.classi;
 public class Gruppi {
    
     private String nomeGruppo;
-    private int id;
-    private Utenti[] partecipanti;
+    private int idGruppo;
+    //private Utenti[] partecipanti;
     //private int numElementi;
     
     public Gruppi()
     {
         this.nomeGruppo = "";
-        this.id = -1;
-        this.partecipanti = null;
+        this.idGruppo = -1;
+        //this.partecipanti = null;
         
     }
 
@@ -43,27 +43,13 @@ public class Gruppi {
      * @return the id
      */
     public int getId() {
-        return id;
+        return idGruppo;
     }
 
     /**
-     * @param id the id to set
+     * @param id the idGruppo to set
      */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the partecipanti
-     */
-    public Utenti[] getPartecipanti() {
-        return partecipanti;
-    }
-
-    /**
-     * @param partecipanti the partecipanti to set
-     */
-    public void setPartecipanti(Utenti[] partecipanti) {
-        this.partecipanti = partecipanti;
+    public void setId(int idGruppo) {
+        this.idGruppo = idGruppo;
     }
 }
