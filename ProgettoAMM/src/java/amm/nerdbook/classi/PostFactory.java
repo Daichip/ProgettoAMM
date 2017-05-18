@@ -35,13 +35,13 @@ public class PostFactory {
         post2.setIdPost(1);
         post2.setContenuto("Selfie with a friend(?)");
         post2.setUrlPost("Assets/linkedImg.jpg");
-        post2.setTipo(Post.TipoPost.TEXTIMAGE);
+        post2.setTipo(Post.TipoPost.IMAGE);
         
         Post post3 = new Post();
         post3.setAutore(utentiFactory.getUtenteById(3));
         post3.setIdPost(2);
         post3.setContenuto("Guarda <a href=\"https://en.wikipedia.org/wiki/List_of_recurring_Mario_franchise_enemies#Shy_Guy\" target=\"_blank\"> https://en.wikipedia.org/wiki/List_of_recurring_Mario_franchise_enemies#Shy_Guy </a> per scoprire qualcosa su di me!");
-        post3.setTipo(Post.TipoPost.TEXTLINK);
+        post3.setTipo(Post.TipoPost.TEXT);
         
         listaPost.add(post1);
         listaPost.add(post2);

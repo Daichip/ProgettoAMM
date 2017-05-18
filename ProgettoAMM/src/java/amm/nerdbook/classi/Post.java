@@ -11,7 +11,7 @@ package amm.nerdbook.classi;
  */
 public class Post {
 
-    public enum TipoPost { TEXT, IMAGE, TEXTIMAGE, TEXTLINK, LINK };
+    public enum TipoPost { TEXT, IMAGE};
     
     private Utenti autore;
     private int idPost;
