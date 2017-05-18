@@ -59,7 +59,6 @@ public class Profilo extends HttpServlet {
                 request.setAttribute("userDataNascita", request.getParameter("userDataNascita"));
                 request.setAttribute("userFraseDescrizione", request.getParameter("userFraseDescrizione"));
                 request.setAttribute("userPass", request.getParameter("userPass"));
-                
                 request.setAttribute("update", true);
             }
             else
