@@ -5,6 +5,11 @@
  */
 package amm.nerdbook.classi;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -17,10 +22,12 @@ public class PostFactory {
     //Pattern Design Singleton
     private static PostFactory singleton;    
     private ArrayList<Post> listaPost = new ArrayList<Post>();
+    protected String connectionString;
     
     // Costruttore
     private PostFactory()
     {
+        /*
         UtentiFactory utentiFactory = UtentiFactory.getInstance();
         
         // Generazione dei post
@@ -46,6 +53,7 @@ public class PostFactory {
         listaPost.add(post1);
         listaPost.add(post2);
         listaPost.add(post3);
+        */
     }
     
     // Metodi  
@@ -59,10 +67,57 @@ public class PostFactory {
     
     public Post getPostByID(int id)
     {
+        /*
         for(Post post : this.listaPost)
         {
             if(post.getIdPost() == id)
                 return post;
+        }
+        return null;
+        */
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = 
+                      "select * from Post "
+                    + "join posttype on Post.tipo = TipoPost.idTipoPost "
+                    + "where idPost = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            if (res.next()) {
+                Post current = new Post();
+                //imposto id del post
+                current.setIdPost(res.getInt("idPost"));
+                
+                //impost il contenuto del post
+                current.setContenuto(res.getString("content"));
+                
+                //imposto il tipo del post
+                current.setTipo(this.postTypeFromString(res.getString("nameTipoPost")));
+                
+                //imposto l'autore del post
+                Utenti autore = UtentiFactory.getUtenteById(res.getInt("author"));
+                current.setAutore(autore);
+
+                stmt.close();
+                conn.close();
+                return current;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return null;
     }
@@ -73,6 +128,7 @@ public class PostFactory {
     {
         List<Post> listaPost = new ArrayList<Post>();
         
+        /*
         for(Post post : this.listaPost)
         {
             if(post.getAutore().equals(author))
@@ -80,7 +136,78 @@ public class PostFactory {
                 listaPost.add(post);
             }
         }
+        */
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = 
+                      "select * from Post "
+                    + "join posttype on Post.tipo = TipoPost.idTipoPost "
+                    + "where autore = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, author.getId());
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while (res.next()) {
+                
+                Post current = new Post();
+                //imposto id del post
+                current.setIdPost(res.getInt("idPosts"));
+                
+                //impost il contenuto del post
+                current.setContenuto(res.getString("contenuto"));
+                
+                //imposto il tipo del post
+                current.setTipo(this.postTypeFromString(res.getString("nameTipoPost")));
+
+                //imposto l'autore del post
+                current.setAutore(author);
+                
+                listaPost.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return listaPost;
+    }
+    
+    public void setConnectionString(String s)
+    {
+	this.connectionString = s;
+    }
+    
+    public String getConnectionString()
+    {
+	return this.connectionString;
+    }
+    
+     private Post.TipoPost postTypeFromString(String type){
+        
+        if(type.equals("IMAGE"))
+            return Post.TipoPost.IMAGE;
+        
+        return Post.TipoPost.TEXT;
+    }
+    
+    private int postTypeFromEnum(Post.TipoPost type){
+        //È realizzabile in modo più robusto rispetto all'hardcoding degli indici
+        if(type == Post.TipoPost.TEXT)
+                return 1;
+            else
+                return 2;
     }
     
 }

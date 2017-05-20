@@ -5,6 +5,11 @@
  */
 package amm.nerdbook.classi;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -16,11 +21,12 @@ public class UtentiFactory {
     //Pattern Design Singleton
     private static UtentiFactory singleton;   
     private ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
+    protected String connectionString;
     
     private UtentiFactory()
     {
         //Utenti 
-        
+       /* 
         // Davide Fara
         Utenti utente0 = new Utenti();
         utente0.setNome("Davide");
@@ -87,6 +93,7 @@ public class UtentiFactory {
         listaUtenti.add(utente3);
         listaUtenti.add(utente4);
         
+        */
     }
     
     public static UtentiFactory getInstance()
@@ -99,28 +106,158 @@ public class UtentiFactory {
     
     public Utenti getUtenteById(int id)
     {
+        /*
         for (Utenti utente : this.listaUtenti) 
         {
             if (utente.getId() == id) 
                 return utente;
         }
         return null;
+        */
+        
+        try 
+        {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = 
+                      "select * from Utenti "
+                    + "where idUtente = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            if (res.next()) {
+                Utenti current = new Utenti();
+                current.setId(res.getInt("idUtente"));
+                current.setNome(res.getString("nome"));
+                current.setCognome(res.getString("cognome"));
+                current.setPassword(res.getString("password"));
+                current.setConfermaPassword(res.getString("confermaPassword"));
+                current.setFrasePresentazione(res.getString("frasePresentazione"));
+                current.setDataNascita(res.getString("dataNascita"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                current.setUsername(res.getString("username"));
+                
+                stmt.close();
+                conn.close();
+                return current;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
     
     public int getIdByUserAndPassword(String user, String pass)
     {
-	for(Utenti utente : this.listaUtenti)
+	/*
+        for(Utenti utente : this.listaUtenti)
 	{
 		if(utente.getUsername().equals(user) && utente.getPassword().equals(pass)) // se la combo nome e pass è corretta rendo l'ID
 			return utente.getId();
 	}
 	
 	return -1; // se alla fine non trovo il utente rendo un ID non valido
+        */
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = 
+                      "select idUtente from Utenti "
+                    + "where name = ? and password = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setString(1, user);
+            stmt.setString(2, pass);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            if (res.next()) {
+                int id = res.getInt("idUtente");
+
+                stmt.close();
+                conn.close();
+                return id;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+        
     }
     
     public ArrayList<Utenti> getListaUtenti()
     {
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "gato", "gato");
+            
+            String query = "select * from Utenti";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while (res.next()) {
+                
+                Utenti current = new Utenti();
+                //imposto id del post
+                current.setId(res.getInt("idUtente"));
+                current.setId(res.getInt("idUtente"));
+                current.setNome(res.getString("nome"));
+                current.setCognome(res.getString("cognome"));
+                current.setPassword(res.getString("password"));
+                current.setConfermaPassword(res.getString("confermaPassword"));
+                current.setFrasePresentazione(res.getString("frasePresentazione"));
+                current.setDataNascita(res.getString("dataNascita"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                current.setUsername(res.getString("username"));
+                
+                listaUtenti.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+            
+            return listaUtenti;
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
         return listaUtenti;
     }
     
+    public void setConnectionString(String s)
+    {
+	this.connectionString = s;
+    }
+    
+    public String getConnectionString()
+    {
+	return this.connectionString;
+    }
 }

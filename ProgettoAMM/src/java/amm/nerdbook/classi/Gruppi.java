@@ -12,6 +12,7 @@ package amm.nerdbook.classi;
 public class Gruppi {
    
     private String nomeGruppo;
+    private String descrizione;
     private int idGruppo;
     //private Utenti[] partecipanti;
     //private int numElementi;
@@ -51,5 +52,19 @@ public class Gruppi {
      */
     public void setId(int idGruppo) {
         this.idGruppo = idGruppo;
+    }
+
+    /**
+     * @return the descrizione
+     */
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    /**
+     * @param descrizione the descrizione to set
+     */
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 }
