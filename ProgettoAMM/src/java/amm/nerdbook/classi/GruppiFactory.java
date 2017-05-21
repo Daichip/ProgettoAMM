@@ -54,7 +54,7 @@ public class GruppiFactory {
         return singleton;
     }
     
-    public Gruppi getUtenteById(int id)
+    public Gruppi getGruppoById(int id)
     {
         for (Gruppi gruppo : this.listaGruppi) 
         {
@@ -64,7 +64,7 @@ public class GruppiFactory {
         return null;
     } 
     
-    public Gruppi getUtenteByName(int nomeGruppo)
+    public Gruppi getGruppoByName(int nomeGruppo)
     {
         for (Gruppi gruppo : this.listaGruppi) 
         {

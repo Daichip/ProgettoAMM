@@ -81,7 +81,7 @@ public class PostFactory {
             
             String query = 
                       "select * from Post "
-                    + "join posttype on Post.tipo = TipoPost.idTipoPost "
+                    + "join TipoPost on Post.tipo = TipoPost.idTipoPost "
                     + "where idPost = ?";
             
             // Prepared Statement
@@ -100,13 +100,13 @@ public class PostFactory {
                 current.setIdPost(res.getInt("idPost"));
                 
                 //impost il contenuto del post
-                current.setContenuto(res.getString("content"));
+                current.setContenuto(res.getString("contenuto"));
                 
                 //imposto il tipo del post
                 current.setTipo(this.postTypeFromString(res.getString("nameTipoPost")));
                 
                 //imposto l'autore del post
-                Utenti autore = UtentiFactory.getUtenteById(res.getInt("author"));
+                Utenti autore = UtentiFactory.getInstance().getUtenteById(res.getInt("author"));
                 current.setAutore(autore);
 
                 stmt.close();
@@ -144,7 +144,7 @@ public class PostFactory {
             
             String query = 
                       "select * from Post "
-                    + "join posttype on Post.tipo = TipoPost.idTipoPost "
+                    + "join TipoPost on Post.tipo = TipoPost.idTipoPost "
                     + "where autore = ?";
             
             // Prepared Statement
@@ -210,4 +210,32 @@ public class PostFactory {
                 return 2;
     }
     
+    public void inserisciPost(Post post){
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = 
+                      "insert into posts (idPost, autore, contenuto, urlPost, tipo) "
+                    + "values (default, ? , ? , ? , ?)";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, post.getAutore().getId());
+            
+            stmt.setString(2, post.getContenuto());
+
+            stmt.setString(3, post.getUrlPost());
+            
+            stmt.setInt(4, this.postTypeFromEnum(post.getTipo()));
+            
+            // Esecuzione query
+            stmt.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
