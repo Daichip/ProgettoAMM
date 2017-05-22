@@ -26,7 +26,7 @@ public class UtentiFactory {
     private UtentiFactory()
     {
         //Utenti 
-       /* 
+       /*
         // Davide Fara
         Utenti utente0 = new Utenti();
         utente0.setNome("Davide");
@@ -176,7 +176,7 @@ public class UtentiFactory {
             
             String query = 
                       "select idUtente from Utenti "
-                    + "where name = ? and password = ?";
+                    + "where username = ? and password = ?";
             
             // Prepared Statement
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -195,6 +195,7 @@ public class UtentiFactory {
                 stmt.close();
                 conn.close();
                 return id;
+                //return 1;
             }
 
             stmt.close();
@@ -203,6 +204,7 @@ public class UtentiFactory {
             e.printStackTrace();
         }
         return -1;
+        //return 1;
         
     }
     
@@ -260,4 +262,5 @@ public class UtentiFactory {
     {
 	return this.connectionString;
     }
+    
 }
