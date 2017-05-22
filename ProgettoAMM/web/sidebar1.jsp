@@ -11,7 +11,7 @@
     <nav class="sideList" id="sidePersone">
         <ul>
             <c:forEach var="utente" items="${listaUtenti}">
-                <li><a href="Bacheca?user=${utente.id}"> ${utente.nome} ${utente.cognome} </a></li>
+                <li><a href="Bacheca?user=${utente.idUtente}"> ${utente.nome} ${utente.cognome} </a></li>
             </c:forEach>
         </ul>
     </nav>

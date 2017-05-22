@@ -161,7 +161,7 @@ public class PostFactory {
                 
                 Post current = new Post();
                 //imposto id del post
-                current.setIdPost(res.getInt("idPosts"));
+                current.setIdPost(res.getInt("idPost"));
                 
                 //impost il contenuto del post
                 current.setContenuto(res.getString("contenuto"));

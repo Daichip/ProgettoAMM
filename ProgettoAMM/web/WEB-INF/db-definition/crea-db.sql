@@ -37,7 +37,22 @@ CREATE TABLE Post
     FOREIGN KEY (tipo) REFERENCES TipoPost(idTipoPost)
 );
 
+CREATE TABLE Amicizie
+(
+    follower INTEGER,
+    followed INTEGER,
+    PRIMARY KEY (follower, followed),
+    FOREIGN KEY (follower) REFERENCES Utenti(idUtente),
+    FOREIGN KEY (followed) REFERENCES Utenti(idUtente)
+);
 
+CREATE TABLE PartecipaGruppi (
+   followed INTEGER,
+   follower INTEGER,
+   PRIMARY KEY (followed, follower),
+   FOREIGN KEY (followed) REFERENCES gruppi(idGruppo),
+   FOREIGN KEY (follower) REFERENCES Utenti(idUtente)
+);
 
 INSERT INTO TipoPost(idTipoPost, nameTipoPost)
 VALUES (default, 'TEXT');
@@ -109,3 +124,12 @@ VALUES(default, 'Heroes of the Triforce', 'Un gruppo per tutti quelli che hanno 
 
 INSERT INTO Gruppi(idGruppo, nomeGruppo, descrizione)
 VALUES(default, 'Nobodies','Un gruppo per me e basta... Son solo anche qui');
+
+INSERT INTO Amicizie (follower, followed)
+VALUES (1, 2),
+       (1, 3),
+       (2, 1),
+       (2, 3),
+       (3, 1),
+       (3, 2) 
+       

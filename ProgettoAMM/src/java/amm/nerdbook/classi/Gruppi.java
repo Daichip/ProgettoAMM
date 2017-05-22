@@ -5,6 +5,8 @@
  */
 package amm.nerdbook.classi;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Davide Fara
@@ -14,14 +16,14 @@ public class Gruppi {
     private String nomeGruppo;
     private String descrizione;
     private int idGruppo;
-    //private Utenti[] partecipanti;
+    private ArrayList<Utenti> partecipanti;
     //private int numElementi;
     
     public Gruppi()
     {
         this.nomeGruppo = "";
         this.idGruppo = -1;
-        //this.partecipanti = null;
+        this.partecipanti = null;
         
     }
 
@@ -66,5 +68,19 @@ public class Gruppi {
      */
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
+    }
+
+    /**
+     * @return the partecipanti
+     */
+    public ArrayList<Utenti> getPartecipanti() {
+        return partecipanti;
+    }
+
+    /**
+     * @param partecipanti the partecipanti to set
+     */
+    public void setPartecipanti(ArrayList<Utenti> partecipanti) {
+        this.partecipanti = partecipanti;
     }
 }

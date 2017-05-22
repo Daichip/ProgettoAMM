@@ -212,7 +212,7 @@ public class UtentiFactory {
     {
         try {
             // path, username, password
-            Connection conn = DriverManager.getConnection(connectionString, "gato", "gato");
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
             
             String query = "select * from Utenti";
             
@@ -227,7 +227,6 @@ public class UtentiFactory {
                 
                 Utenti current = new Utenti();
                 //imposto id del post
-                current.setId(res.getInt("idUtente"));
                 current.setId(res.getInt("idUtente"));
                 current.setNome(res.getString("nome"));
                 current.setCognome(res.getString("cognome"));
