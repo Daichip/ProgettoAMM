@@ -5,6 +5,11 @@
  */
 package amm.nerdbook.classi;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -85,4 +90,46 @@ public class GruppiFactory {
 	return this.connectionString;
     }
     
+    public ArrayList<Gruppi> getListaGruppi()
+    {
+        ArrayList<Gruppi> listaGruppi = new ArrayList();
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = "select * from Gruppi";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while (res.next()) {
+                
+                /* private String nomeGruppo;
+    private String descrizione;
+    private int idGruppo;
+    private ArrayList<Utenti> partecipanti; */
+                
+                Gruppi current = new Gruppi();
+                //imposto id del post
+                current.setId(res.getInt("idGruppo"));
+                current.setNomeGruppo(res.getString("nomeGruppo"));
+                current.setDescrizione(res.getString("descrizione"));
+                
+                listaGruppi.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return listaGruppi;
+    }
 }

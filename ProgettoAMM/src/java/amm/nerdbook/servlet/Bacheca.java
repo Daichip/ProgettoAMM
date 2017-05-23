@@ -5,6 +5,8 @@
  */
 package amm.nerdbook.servlet;
 
+import amm.nerdbook.classi.Gruppi;
+import amm.nerdbook.classi.GruppiFactory;
 import amm.nerdbook.classi.Post;
 import amm.nerdbook.classi.PostFactory;
 import amm.nerdbook.classi.Utenti;
@@ -45,6 +47,9 @@ public class Bacheca extends HttpServlet {
         //Per visualizzare gli utenti nella navbar
         ArrayList<Utenti> userList = UtentiFactory.getInstance().getListaUtenti();
         request.setAttribute("listaUtenti", userList);
+        ArrayList<Gruppi> groupList = GruppiFactory.getInstance().getListaGruppi();
+        request.setAttribute("listaGruppi", groupList);
+        
         
         if (sessione != null && sessione.getAttribute("loggedIn") != null && sessione.getAttribute("loggedIn").equals(true))
         {

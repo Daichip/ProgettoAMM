@@ -20,7 +20,7 @@ public class UtentiFactory {
     
     //Pattern Design Singleton
     private static UtentiFactory singleton;   
-    private ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
+    //private ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
     protected String connectionString;
     
     private UtentiFactory()
@@ -210,6 +210,8 @@ public class UtentiFactory {
     
     public ArrayList<Utenti> getListaUtenti()
     {
+        ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
+        
         try {
             // path, username, password
             Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
@@ -242,8 +244,6 @@ public class UtentiFactory {
 
             stmt.close();
             conn.close();
-            
-            return listaUtenti;
             
         } catch (SQLException e) {
             e.printStackTrace();

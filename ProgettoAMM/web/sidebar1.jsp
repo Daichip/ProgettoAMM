@@ -11,16 +11,16 @@
     <nav class="sideList" id="sidePersone">
         <ul>
             <c:forEach var="utente" items="${listaUtenti}">
-                <li><a href="Bacheca?user=${utente.idUtente}"> ${utente.nome} ${utente.cognome} </a></li>
+                <li><a href="Bacheca?user=${utente.id}"> ${utente.nome} ${utente.cognome} </a></li>
             </c:forEach>
         </ul>
     </nav>
     <h2>Gruppi</h2>
     <nav class="sideList" id="sideGruppi">
         <ul>
-            <li>Plumbers</li>
-            <li>Heroes of the Triforce</li>
-            <li>Nobodies</li>
+            <c:forEach var="gruppo" items="${listaGruppi}">
+                <li> ${gruppo.nomeGruppo}</a></li>
+            </c:forEach>
         </ul>
     </nav>
 </div>

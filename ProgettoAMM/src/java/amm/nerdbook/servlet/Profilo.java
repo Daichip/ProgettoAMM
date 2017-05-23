@@ -41,6 +41,7 @@ public class Profilo extends HttpServlet {
         //Per visualizzare gli utenti nella navbar
         ArrayList<Utenti> userList = UtentiFactory.getInstance().getListaUtenti();
         request.setAttribute("listaUtenti", userList);
+        request.setAttribute("update", false);
         
         if(sessione.getAttribute("loggedIn") != null)
         {
