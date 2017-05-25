@@ -208,3 +208,5 @@ ERROR 08004: Autenticazione della connessione non riuscita. Motivo: Autenticazio
 ============= end nested exception, level (1) ===========
 Cleanup action completed
 Thu May 25 18:20:43 CEST 2017 Thread[DRDAConnThread_5,5,main] (DATABASE = ammdb), (DRDAID = {451}), Autenticazione della connessione non riuscita. Motivo: Autenticazione non valida..
+----------------------------------------------------------------
+Thu May 25 19:36:24 CEST 2017: arresto in corso del motore di Derby
