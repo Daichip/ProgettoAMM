@@ -89,15 +89,15 @@ public class Login extends HttpServlet {
         {
             int loggedUserID = UtentiFactory.getInstance().getIdByUserAndPassword(username, password);
             
-            
-            
-            
             if(loggedUserID != -1)
             {
+                /*PROVA PROFILO ---------------------------------------------------------------------------------------------------------------*/
+                session.setAttribute("update", false);
+                /*--------------------------------------------------------------------------------------------------------------- PROVA PROFILO*/
+                
                 session.setAttribute("loggedIn", true);
                 session.setAttribute("loggedUserID", loggedUserID);
                 // Così memorizzo in sessione le variabili che mi servono per loggare l'utente
-              
                 
                 Utenti utente = UtentiFactory.getInstance().getUtenteById(loggedUserID);
                 

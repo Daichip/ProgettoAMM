@@ -50,6 +50,24 @@ public class Bacheca extends HttpServlet {
         ArrayList<Gruppi> groupList = GruppiFactory.getInstance().getListaGruppi();
         request.setAttribute("listaGruppi", groupList);
         
+        /*
+        if(request.getAttribute("postDaInserire").equals(true))
+        {
+            Post tmp = new Post();
+            tmp.setAutore(UtentiFactory.getInstance().getUtenteById((Integer)sessione.getAttribute("loggedUserID")));
+            tmp.setTipo(PostFactory.getInstance().postTypeFromString(request.getParameter("postType")));
+            if(tmp.getTipo() == Post.TipoPost.TEXT)
+            {
+                tmp.setContenuto(request.getParameter("testoPost"));
+            }
+            else
+            {
+                tmp.setUrlPost(request.getParameter("testoPost"));
+            }
+            
+            PostFactory.getInstance().inserisciPost(tmp);
+        }
+        */
         
         if (sessione != null && sessione.getAttribute("loggedIn") != null && sessione.getAttribute("loggedIn").equals(true))
         {

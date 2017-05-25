@@ -17,12 +17,12 @@
     </head>
     <body>
         <c:set var="title" value="Bacheca Personale" scope="request"/>
-        <c:set var="page" value="Descrizione" scope="request"/>
+        <c:set var="page" value="bacheca" scope="request"/>
         <jsp:include page="header.jsp"/>
-        <c:set var="title" value="bacheca" scope="request"/>
         <jsp:include page="sidebar1.jsp"/>
                 
         <div class="bodyBacheca" id="divBody">
+            <jsp:include page="nuovoPost.jsp"/>
             <div class="post">
                 <h1>Post:</h1>
             </div>

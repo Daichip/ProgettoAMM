@@ -117,7 +117,7 @@ header nav ol, header nav li
     
 }
 
-header nav a.active
+header nav li.active
 {
     background-color: #ffffff;
     text-decoration: underline;
@@ -127,6 +127,7 @@ header nav a.active
     padding-right: 12px;
     padding-bottom: 28px;
     padding-left: 10px;
+    height: 8px;
 }
 
 
@@ -228,6 +229,11 @@ p
     bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
+}
+
+#preForm a
+{
+    color: #ffffff;
 }
 
 #preForm img, #preForm h1
@@ -471,6 +477,23 @@ p
   white-space: pre;
 }
 
+#confermaUpdate
+{
+    text-align: center;
+    font: 35px/35px "Calibri", Arial, sans-serif;
+    font-weight: bold;
+    background-color: #1f3559;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    position: relative;
+}
+
+#confermaUpdate p
+{
+    color: #ffffff;
+}
+
 #profilePic
 {
     position: relative;
@@ -480,6 +503,7 @@ p
     padding-left: 9px;
     padding-top: 4px;
     padding-right: 20px;
+    border-radius: 0%;
 }
 
 #profilePic, #profileForm
@@ -612,6 +636,7 @@ label:after, button:before
     header nav a.active
     {
         padding: 1px;
+        background-color: #99b5c6;
     }
     
     #header nav li
@@ -841,15 +866,25 @@ label:after, button:before
     }
 }
 
-
-/* MILESTONE 3 */
-#profileError
+/* MILESTONE 3/4 */
+.nuovoPost
 {
-    padding-left: 350px;
+    background-color: #edf4f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    width: 80%;    
+    margin-bottom: 30px;
 }
 
-#formNewPost
-{    
+#nuovoPostForm form, #formNewPost form
+{
+    background-color: #ffffff;
+    margin-right:0px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    padding: 20px;
+    width: 320px;
+    height: 200px;
     padding-bottom: 20px;
 }
 
@@ -857,6 +892,12 @@ label:after, button:before
 {
     float: left;
 }
+
+#cancellaProfilo button
+{
+    margin-left: 108px;
+}
+
 
 /* Immagini decorative */
 /*

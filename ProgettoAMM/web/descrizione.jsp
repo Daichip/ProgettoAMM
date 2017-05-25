@@ -20,7 +20,7 @@
     </head>
     <body>
         <c:set var="title" value="Bacheca" scope="request"/>
-        <c:set var="page" value="Descrizione" scope="request"/>
+        <c:set var="page" value="descrizione" scope="request"/>
         <jsp:include page="header.jsp"/>
 
         <div class="sideBar" id="subList">

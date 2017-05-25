@@ -16,6 +16,10 @@
         <servlet-name>Profilo</servlet-name>
         <servlet-class>amm.nerdbook.servlet.Profilo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NuovoPost</servlet-name>
+        <servlet-class>amm.nerdbook.servlet.NuovoPost</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>Profilo</servlet-name>
         <url-pattern>/Profilo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NuovoPost</servlet-name>
+        <url-pattern>/NuovoPost</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

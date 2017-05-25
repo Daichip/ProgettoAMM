@@ -21,14 +21,14 @@
                 <h1>Login</h1>
             </div>
             <c:set var="title" value="Login" scope="request"/>
-            <c:set var="page" value="Descrizione" scope="request"/>
+            <c:set var="page" value="login" scope="request"/>
             <jsp:include page="nav.jsp"/>
         </header>
         
         <div id="contPost">
             <div id="preForm">
                 <img id="logoImg" title="NerdBookLogo" alt="LogoPic" src="/ProgettoAMM/Assets/logoNerdBook.jpg">
-                <h1>NerdBook</h1>
+                <h1><a href="Descrizione">NerdBook</a></h1>
             </div>
             <div id="divBody">
                 <c:if test="${invalidData == true}">

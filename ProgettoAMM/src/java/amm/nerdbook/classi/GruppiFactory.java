@@ -107,13 +107,8 @@ public class GruppiFactory {
             ResultSet res = stmt.executeQuery();
 
             // ciclo sulle righe restituite
-            while (res.next()) {
-                
-                /* private String nomeGruppo;
-    private String descrizione;
-    private int idGruppo;
-    private ArrayList<Utenti> partecipanti; */
-                
+            while (res.next()) 
+            {                                
                 Gruppi current = new Gruppi();
                 //imposto id del post
                 current.setId(res.getInt("idGruppo"));
@@ -127,6 +122,7 @@ public class GruppiFactory {
             conn.close();
             
         } catch (SQLException e) {
+            System.out.println("Attenzione: Errore nella ricerca dei gruppi!");
             e.printStackTrace();
         }
         

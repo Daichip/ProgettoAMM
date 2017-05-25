@@ -19,7 +19,7 @@
     <nav class="sideList" id="sideGruppi">
         <ul>
             <c:forEach var="gruppo" items="${listaGruppi}">
-                <li> ${gruppo.nomeGruppo}</a></li>
+                <li><a href="Bacheca?user=${gruppo.id}">${gruppo.nomeGruppo}</a></li>
             </c:forEach>
         </ul>
     </nav>

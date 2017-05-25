@@ -154,6 +154,7 @@ public class UtentiFactory {
             stmt.close();
             conn.close();
         } catch (SQLException e) {
+            System.out.println("Attenzione: Utente non trovato!");
             e.printStackTrace();
         }
         return null;
@@ -201,6 +202,7 @@ public class UtentiFactory {
             stmt.close();
             conn.close();
         } catch (SQLException e) {
+            System.out.println("Attenzione: Utente non trovato!");
             e.printStackTrace();
         }
         return -1;
@@ -246,6 +248,7 @@ public class UtentiFactory {
             conn.close();
             
         } catch (SQLException e) {
+            System.out.println("Attenzione: Errore nell'inserimento dell'utente!");
             e.printStackTrace();
         }
         
@@ -262,4 +265,46 @@ public class UtentiFactory {
 	return this.connectionString;
     }
     
+    public void cancellaUtente(Utenti utente)
+    {
+        ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+
+            String query = "delete from Amicizie where follower = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, utente.getId());
+            stmt.executeUpdate();
+            
+            query = "delete from Amicizie where followed = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, utente.getId());
+            stmt.executeUpdate();
+            
+            query = "delete from PartecipaGruppi where follower = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, utente.getId());
+            stmt.executeUpdate();
+            
+            query = "delete from utenti where idUtente = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, utente.getId());
+            stmt.executeUpdate();
+            
+            
+
+            stmt.close();
+            conn.close();
+       
+        } catch (SQLException e) {
+            System.out.println("Attenzione: Errore nella cancellazione dell'utente!");
+            e.printStackTrace();
+        }
+        
+
+    }
 }

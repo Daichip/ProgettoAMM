@@ -117,6 +117,7 @@ public class PostFactory {
             stmt.close();
             conn.close();
         } catch (SQLException e) {
+            System.out.println("Attenzione: Errore nella ricerca del post!");
             e.printStackTrace();
         }
         return null;
@@ -166,6 +167,9 @@ public class PostFactory {
                 //impost il contenuto del post
                 current.setContenuto(res.getString("contenuto"));
                 
+                //impost il link del post
+                current.setUrlPost(res.getString("urlPost"));
+             
                 //imposto il tipo del post
                 current.setTipo(this.postTypeFromString(res.getString("nameTipoPost")));
 
@@ -178,6 +182,7 @@ public class PostFactory {
             stmt.close();
             conn.close();
         } catch (SQLException e) {
+            System.out.println("Attenzione: Errore nella ricerca del post!");
             e.printStackTrace();
         }
 
@@ -194,7 +199,7 @@ public class PostFactory {
 	return this.connectionString;
     }
     
-     private Post.TipoPost postTypeFromString(String type){
+     public Post.TipoPost postTypeFromString(String type){
         
         if(type.equals("IMAGE"))
             return Post.TipoPost.IMAGE;
@@ -216,7 +221,7 @@ public class PostFactory {
             Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
             
             String query = 
-                      "insert into posts (idPost, autore, contenuto, urlPost, tipo) "
+                      "insert into Post (idPost, autore, contenuto, urlPost, tipo) "
                     + "values (default, ? , ? , ? , ?)";
             
             // Prepared Statement
@@ -235,6 +240,34 @@ public class PostFactory {
             stmt.executeUpdate();
         }
         catch(SQLException e){
+            System.out.println("Attenzione: Errore nell'inserimento del post!");
+            e.printStackTrace();
+        }
+    }
+    
+    public void cancellaPostUtente(Utenti utente)
+    {
+        List<Post> listaPost = new ArrayList<Post>();
+               
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = "delete from Post " + "where autore = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, utente.getId());
+            
+            // Esecuzione query
+            stmt.executeUpdate();
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Attenzione: Errore nella cancellazione del post!");
             e.printStackTrace();
         }
     }
