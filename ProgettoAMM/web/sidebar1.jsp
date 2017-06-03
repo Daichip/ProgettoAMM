@@ -7,6 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div class="sideBar" id="side1">
+    <div id="cercaUtente">
+        <h2>Ricerca</h2>
+        <input id="searchField" type="text" placeholder="Inserisci il nome dell'utente da cercare" value="">
+        <button id="bottoneRicercaUtente">Cerca</button>
+    </div>
     <h2>Persone</h2>
     <nav class="sideList" id="sidePersone">
         <ul>

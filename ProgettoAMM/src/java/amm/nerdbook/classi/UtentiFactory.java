@@ -255,6 +255,53 @@ public class UtentiFactory {
         return listaUtenti;
     }
     
+    public ArrayList<Utenti> getListaUtenti(String nomeUtCercato)
+    {
+        ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            
+            String query = "select * from Utenti where nome like ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, "%" + nomeUtCercato + "%");
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while (res.next()) {
+                
+                Utenti current = new Utenti();
+                //imposto id del post
+                current.setId(res.getInt("idUtente"));
+                current.setNome(res.getString("nome"));
+                current.setCognome(res.getString("cognome"));
+                current.setPassword(res.getString("password"));
+                current.setConfermaPassword(res.getString("confermaPassword"));
+                current.setFrasePresentazione(res.getString("frasePresentazione"));
+                current.setDataNascita(res.getString("dataNascita"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                current.setUsername(res.getString("username"));
+                
+                listaUtenti.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+            
+        } catch (SQLException e) {
+            System.out.println("Attenzione: Errore nell'inserimento dell'utente!");
+            e.printStackTrace();
+        }
+        
+        return listaUtenti;
+    }
+    
+    
     public void setConnectionString(String s)
     {
 	this.connectionString = s;

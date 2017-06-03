@@ -5,6 +5,8 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/javascript.js"></script>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,6 +32,8 @@
             
             <c:forEach var="post" items="${posts}">
                 <div class="post" <!--id="post1-->">
+                     <img id="proPic" title="profilePic" alt="fotoProfilo" src="${post.autore.urlFotoProfilo}">
+                     <h2><c:out value="${post.autore.nome} ${post.autore.cognome} ha scritto"/></h2>
                     <c:if test="${post.tipo == 'TEXT'}">
                         <p>${post.contenuto}</p>
                     </c:if>

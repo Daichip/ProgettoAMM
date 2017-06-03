@@ -29,7 +29,7 @@ a:hover
 
 input:focus, textArea:focus
 {
-    color: aquamarine;
+    color: royalblue;
 }
 
 body
@@ -139,7 +139,7 @@ html
 
 input:focus, textArea:focus
 {
-    color: aquamarine;
+    color: royalblue;
 }
 
 nav li.active
@@ -151,6 +151,11 @@ p
 {
     color: #000000;
     font: 20px/25px "Calibri", "Times New Roman", Arial, sans-serif;
+}
+
+button
+{
+    text-align: center;
 }
 
 
@@ -262,7 +267,16 @@ p
     right: 0px;
     left: 0px;
     bottom: 0px;
+    margin-top: 1px;
+    margin-right: 51px;
+    margin-left: 7px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    float: none;
+    height: 50%;
+    width: 300px;
 }
+
 
 #side1 h2
 {
@@ -325,7 +339,7 @@ p
     padding: 10px;
 }
 
-.post h1
+.post h1, .post h2
 {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
@@ -346,18 +360,7 @@ p
 /*//////////*/
 
 
-.sideBar
-{
-    background-color: #ffffff;
-    margin-top: 1px;
-    margin-right: 51px;
-    margin-left: 7px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    float: none;
-    height: 100%;
-    width: 300px;
-}
+
 
 
 /* DESCRIZIONE CSS */
@@ -583,17 +586,7 @@ input, textarea, button
 
 }
 
-.sideBar
-{
-    background-color: #ffffff;
-    margin-top: 1px;
-    margin-right: 51px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    float: none;
-    clear: right;
-    height: 100%;
-}
+
 
 label:after, button:before
 {
@@ -866,7 +859,7 @@ label:after, button:before
     }
 }
 
-/* MILESTONE 3/4 */
+/* MILESTONE 3/4/5 */
 .nuovoPost
 {
     background-color: #edf4f9;
@@ -897,6 +890,7 @@ label:after, button:before
 {
     margin-left: 108px;
 }
+
 
 
 /* Immagini decorative */
