@@ -273,7 +273,7 @@ button
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
     float: none;
-    height: 50%;
+    height: 50px;
     width: 300px;
 }
 
@@ -324,7 +324,7 @@ button
 .post h3
 {
     position: absolute;
-    top: 20px;
+    top: 330px;
     left: 100px;
     bottom: 60px;
 }
@@ -344,6 +344,11 @@ button
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
     margin-top: 1px;
+}
+
+.post h3, .post image
+{
+    display: inline;
 }
 
 .bodyBacheca, .bodyDescrizione, .bodyProfilo
@@ -869,21 +874,31 @@ label:after, button:before
     margin-bottom: 30px;
 }
 
-#nuovoPostForm form, #formNewPost form
+#formNewPost
 {
     background-color: #ffffff;
     margin-right:0px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,9,0,0.5);
-    padding: 20px;
-    width: 320px;
-    height: 200px;
-    padding-bottom: 20px;
+    width: 80%;
+    height: 100%;
+    margin-bottom:30px;
 }
 
-#postType #textType
+#formNewPost form
 {
-    float: left;
+   padding-left: 5px;   
+}
+
+#postType
+{
+    display: inline-flex;
+    padding-bottom: 30px;
+}
+
+#formNewPost #image
+{
+    padding-left: 30px;
 }
 
 #cancellaProfilo button
@@ -891,7 +906,22 @@ label:after, button:before
     margin-left: 108px;
 }
 
+#cercaUtente
+{
+    height: 130px;
+}
 
+#formNewPost #text, #formNewPost #image
+{
+    display: inline;
+}
+
+#formNewPost h1
+{
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,9,0,0.5);
+    margin-top: 1px;
+}
 
 /* Immagini decorative */
 /*

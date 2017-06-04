@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Davide Fara">
         <meta name="keywords" content="nerdbook Nerd Book social network friends bacheca spam">
-        <link rel="stylesheet" type="text/css" href="/ProgettoAMM/M2/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
     <body>
         <c:set var="title" value="Bacheca Personale" scope="request"/>
@@ -33,7 +33,7 @@
             <c:forEach var="post" items="${posts}">
                 <div class="post" <!--id="post1-->">
                      <img id="proPic" title="profilePic" alt="fotoProfilo" src="${post.autore.urlFotoProfilo}">
-                     <h2><c:out value="${post.autore.nome} ${post.autore.cognome} ha scritto"/></h2>
+                     <h3><c:out value="${post.autore.nome} ${post.autore.cognome} ha scritto"/></h3>
                     <c:if test="${post.tipo == 'TEXT'}">
                         <p>${post.contenuto}</p>
                     </c:if>
