@@ -36,8 +36,8 @@
                 </c:if>
                 <form class="dataForm" id="loginForm" action="Login" method="post">
                     <div id="insertData">
-                        <label for="userId">Nome Utente</label>
-                        <input type="text" name="userId" id="userId" placeholder="Inserire il nome utente"/>
+                        <label for="userId">Username</label>
+                        <input type="text" name="userId" id="userId" placeholder="Inserire lo username"/>
                         <label for="userPswd">Password</label>
                         <input type="password" name="userPswd" id="userPswd" placeholder="Inserire la password"/>
                     </div>

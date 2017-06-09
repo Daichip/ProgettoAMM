@@ -9,13 +9,13 @@
 <div class="sideBar" id="side1">
     <div id="cercaUtente">
         <h2>Ricerca</h2>
-        <input id="searchField" type="text" placeholder="Inserisci il nome dell'utente da cercare" value="">
-        <button id="bottoneRicercaUtente">Cerca</button>
+        <input id="ricerca" type="text" placeholder="Inserisci il nome dell'utente da cercare" value="" onkeyup=trySearch()>
+        <button id="bottoneRicercaUtente" >Cerca</button>    
     </div>
     <h2>Persone</h2>
     <nav class="sideList" id="sidePersone">
         <ul>
-            <c:forEach var="utente" items="${listaUtenti}">
+            <c:forEach var="utente" items="${utList}">
                 <li><a href="Bacheca?user=${utente.id}"> ${utente.nome} ${utente.cognome} </a></li>
             </c:forEach>
         </ul>

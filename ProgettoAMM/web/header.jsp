@@ -5,6 +5,8 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<script src="js/jquery-3.2.1.min.js"></script> 
+<script src="js/javascript.js"></script>
 <header>
     <div id="title">
         <h1>NerdBook</h1>

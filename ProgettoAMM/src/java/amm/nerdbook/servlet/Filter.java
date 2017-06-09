@@ -9,6 +9,7 @@ import amm.nerdbook.classi.Utenti;
 import amm.nerdbook.classi.UtentiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -39,21 +40,16 @@ public class Filter extends HttpServlet {
         {
             // Verifica che commando e id siano stati impostati
             if (command.equals("search")) 
-            {
-                
+            {                
                 // Esegue la ricerca
-                List<Utenti> listaUtenti = UtentiFactory.getInstance().getListaUtenti(request.getParameter("nomeUtenteCercato"));
-                
-                request.setAttribute("listaUtenti", listaUtenti);
-                
+                ArrayList<Utenti> utList = UtentiFactory.getInstance().getListaUtenti(request.getParameter("utCercato"));
+                request.setAttribute("utList", utList);                
                 // Quando si restituisce del json e' importante segnalarlo ed evitare il caching
                 response.setContentType("application/json");
                 response.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT");
-                response.setHeader("Cache-Control", "no-store, no-cache, "
-                        + "must-revalidate");
+                response.setHeader("Cache-Control", "no-store, no-cache, " + "must-revalidate");
                 // Genero il json con una jsp
-                request.getRequestDispatcher("filter.jsp").
-                        forward(request, response);
+                request.getRequestDispatcher("filter.jsp").forward(request, response);                
             }
         }
      

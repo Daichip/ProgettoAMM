@@ -255,7 +255,7 @@ public class UtentiFactory {
         return listaUtenti;
     }
     
-    public ArrayList<Utenti> getListaUtenti(String nomeUtCercato)
+    public ArrayList<Utenti> getListaUtenti(String infoUtCercato)
     {
         ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
         
@@ -263,11 +263,12 @@ public class UtentiFactory {
             // path, username, password
             Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
             
-            String query = "select * from Utenti where nome like ?";
+            String query = "select * from Utenti where nome like ? or cognome like ?"; /// Modificata per M5 con aggiunta del cognome
             
             // Prepared Statement
             PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setString(1, "%" + nomeUtCercato + "%");
+            stmt.setString(1, "%" + infoUtCercato + "%");
+            stmt.setString(2, "%" + infoUtCercato + "%"); /// Aggiunta per M5
             
             // Esecuzione query
             ResultSet res = stmt.executeQuery();
