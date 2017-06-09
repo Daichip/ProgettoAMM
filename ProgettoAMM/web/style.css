@@ -924,6 +924,7 @@ label:after, button:before
 #cercaUtente input
 {
     margin-left: 5px;
+    margin-bottom: 15px;
 }
 
 #formNewPost #text, #formNewPost #image
