@@ -245,10 +245,9 @@ public class PostFactory {
         }
     }
     
-    public void cancellaPostUtente(Utenti utente)
+    /*
+    public void cancellaPostUtente(Utenti utente) throws SQLException
     {
-        List<Post> listaPost = new ArrayList<Post>();
-               
         try {
             // path, username, password
             Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
@@ -268,7 +267,10 @@ public class PostFactory {
             conn.close();
         } catch (SQLException e) {
             System.out.println("Attenzione: Errore nella cancellazione del post!");
+            Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+            conn.rollback();
             e.printStackTrace();
         }
-    }
+    } 
+    */
 }

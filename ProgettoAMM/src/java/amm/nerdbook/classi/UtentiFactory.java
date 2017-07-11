@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -314,16 +316,21 @@ public class UtentiFactory {
     }
     
     public void cancellaUtente(Utenti utente)
-    {
+    {        
         ArrayList<Utenti> listaUtenti = new ArrayList<Utenti>();
         
         try {
             // path, username, password
             Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
-
-            String query = "delete from Amicizie where follower = ?";
+            // START Transaction
+            conn.setAutoCommit(false);
+            
+            String query = "delete from Post " + "where autore = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setInt(1, utente.getId());
+            stmt.executeUpdate();
 
+            query = "delete from Amicizie where follower = ?";
             stmt = conn.prepareStatement(query);
             stmt.setInt(1, utente.getId());
             stmt.executeUpdate();
@@ -343,16 +350,27 @@ public class UtentiFactory {
             stmt.setInt(1, utente.getId());
             stmt.executeUpdate();
             
-            
-
+            // END Transaction
+            conn.commit();
             stmt.close();
             conn.close();
+            
        
         } catch (SQLException e) {
             System.out.println("Attenzione: Errore nella cancellazione dell'utente!");
+            // In caso di errore durante la cancellazione viene alzata un'eccezione che causa il rollback
+            try {
+                Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+                conn.rollback();
+            } catch (SQLException ex) {
+                Logger.getLogger(UtentiFactory.class.getName()).log(Level.SEVERE, null, ex);
+            }            
             e.printStackTrace();
         }
         
 
     }
+   
 }
+
+

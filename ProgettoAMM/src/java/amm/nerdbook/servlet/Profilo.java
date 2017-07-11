@@ -12,6 +12,7 @@ import amm.nerdbook.classi.Utenti;
 import amm.nerdbook.classi.UtentiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,9 +34,10 @@ public class Profilo extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         response.setContentType("text/html;charset=UTF-8");
         
         
@@ -62,7 +64,7 @@ public class Profilo extends HttpServlet {
             
             if(tmp != null)
             {
-                PostFactory.getInstance().cancellaPostUtente(utente);
+                //PostFactory.getInstance().cancellaPostUtente(utente);
                 UtentiFactory.getInstance().cancellaUtente(utente);
                 sessione.invalidate();
                 request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -93,7 +95,6 @@ public class Profilo extends HttpServlet {
         }
 
         request.getRequestDispatcher("profilo.jsp").forward(request, response);
-        return;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
