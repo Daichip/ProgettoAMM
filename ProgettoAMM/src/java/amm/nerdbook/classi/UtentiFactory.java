@@ -142,7 +142,6 @@ public class UtentiFactory {
                 current.setNome(res.getString("nome"));
                 current.setCognome(res.getString("cognome"));
                 current.setPassword(res.getString("password"));
-                current.setConfermaPassword(res.getString("confermaPassword"));
                 current.setFrasePresentazione(res.getString("frasePresentazione"));
                 current.setDataNascita(res.getString("dataNascita"));
                 current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
@@ -220,7 +219,7 @@ public class UtentiFactory {
             // path, username, password
             Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
             
-            String query = "select * from Utenti";
+            String query = "select * from Utenti order by nome";
             
             // Prepared Statement
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -237,7 +236,6 @@ public class UtentiFactory {
                 current.setNome(res.getString("nome"));
                 current.setCognome(res.getString("cognome"));
                 current.setPassword(res.getString("password"));
-                current.setConfermaPassword(res.getString("confermaPassword"));
                 current.setFrasePresentazione(res.getString("frasePresentazione"));
                 current.setDataNascita(res.getString("dataNascita"));
                 current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
@@ -265,7 +263,7 @@ public class UtentiFactory {
             // path, username, password
             Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
             
-            String query = "select * from Utenti where nome like ? or cognome like ?"; /// Modificata per M5 con aggiunta del cognome
+            String query = "select * from Utenti where nome like ? or cognome like ? order by nome"; /// Modificata per M5 con aggiunta del cognome
             
             // Prepared Statement
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -284,7 +282,6 @@ public class UtentiFactory {
                 current.setNome(res.getString("nome"));
                 current.setCognome(res.getString("cognome"));
                 current.setPassword(res.getString("password"));
-                current.setConfermaPassword(res.getString("confermaPassword"));
                 current.setFrasePresentazione(res.getString("frasePresentazione"));
                 current.setDataNascita(res.getString("dataNascita"));
                 current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
@@ -340,10 +337,12 @@ public class UtentiFactory {
             stmt.setInt(1, utente.getId());
             stmt.executeUpdate();
             
+            
             query = "delete from PartecipaGruppi where follower = ?";
             stmt = conn.prepareStatement(query);
             stmt.setInt(1, utente.getId());
             stmt.executeUpdate();
+            
             
             query = "delete from utenti where idUtente = ?";
             stmt = conn.prepareStatement(query);
@@ -362,6 +361,7 @@ public class UtentiFactory {
             try {
                 Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
                 conn.rollback();
+                System.out.println("Rollback eseguito");
             } catch (SQLException ex) {
                 Logger.getLogger(UtentiFactory.class.getName()).log(Level.SEVERE, null, ex);
             }            

@@ -14,7 +14,6 @@ public class Utenti {
     private String nome;
     private String cognome;
     private String password;
-    private String confermaPassword;
     private String frasePresentazione;
     private String dataNascita;
     private String urlFotoProfilo;
@@ -27,7 +26,6 @@ public class Utenti {
         this.nome = "";
         this.cognome = "";
         this.password = "";
-        this.confermaPassword = "";
         this.frasePresentazione = "";
         this.dataNascita = "";
         this.urlFotoProfilo = "";
@@ -75,20 +73,6 @@ public class Utenti {
      */
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    /**
-     * @return the confermaPassword
-     */
-    public String getConfermaPassword() {
-        return confermaPassword;
-    }
-
-    /**
-     * @param confermaPassword the confermaPassword to set
-     */
-    public void setConfermaPassword(String confermaPassword) {
-        this.confermaPassword = confermaPassword;
     }
 
     /**
