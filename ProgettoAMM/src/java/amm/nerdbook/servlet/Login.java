@@ -26,8 +26,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet(loadOnStartup = 0)
 public class Login extends HttpServlet {
 
-    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
-    //private static final String JDBC_DRIVER = "org.apache.derby.jdbc.ClientDriver";
+    //private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.ClientDriver";
     private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
     private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
     
@@ -35,8 +35,8 @@ public class Login extends HttpServlet {
     
     @Override
     public void init() {
-        String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
-        //String dbConnection = "jdbc:derby://localhost:1527/ammdb";
+        //String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+        String dbConnection = "jdbc:derby://localhost:1527/ammdb";
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException ex) {
@@ -100,10 +100,10 @@ public class Login extends HttpServlet {
                 // Così memorizzo in sessione le variabili che mi servono per loggare l'utente
                 
                 Utenti utente = UtentiFactory.getInstance().getUtenteById(loggedUserID);
-                
-                //String currentUserInfo = utente.getNome() + utente.getCognome();
                 session.setAttribute("currentUserInfo", utente.getNome() + " " + utente.getCognome());
-                
+                session.setAttribute("currentUserPic", utente.getUrlFotoProfilo());
+                //session.setAttribute("currentUser", utente);
+                                
                 //Se l'utente non ha registrato alcuni campi, viene rimandato al form per l'inserimento dei dati (Profilo)
                 if(utente.getNome().equals("") || 
                    utente.getCognome().equals("") || 

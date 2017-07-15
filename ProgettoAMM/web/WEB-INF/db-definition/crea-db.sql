@@ -226,6 +226,42 @@ VALUES (default,
         '',
         1);
 
+INSERT INTO Post (idPost, autore, contenuto, urlPost, tipo)
+VALUES (default,
+        9,
+        'Me and the boys vs something I still cannot understand',
+        'Assets/vsOzma.jpg',
+        2);
+
+INSERT INTO Post (idPost, autore, contenuto, urlPost, tipo)
+VALUES (default,
+        6,
+        'You do what you gotta do to find some apples...',
+        'Assets/riskingLife.jpg',
+        2);
+
+INSERT INTO Post (idPost, autore, contenuto, urlPost, tipo)
+VALUES (default,
+        8,
+        'The squad is ready to go to collect some stars',
+        'Assets/theSquad.jpg',
+        2);
+
+INSERT INTO Post (idPost, autore, contenuto, urlPost, tipo)
+VALUES (default,
+        7,
+        'I found my new career, look at me!',
+        'Assets/baseballNess.jpg',
+        2);
+
+INSERT INTO Post (idPost, autore, contenuto, urlPost, tipo)
+VALUES (default,
+        1,
+        'Saturday night with the boys',
+        'Assets/saturdayNight.png',
+        2);
+
+
 INSERT INTO Gruppi(idGruppo, nomeGruppo, descrizione)
 VALUES(default, 'Plumbers', 'Il meglio del peggio direttamente dal Mushroom Kingdom!');
 

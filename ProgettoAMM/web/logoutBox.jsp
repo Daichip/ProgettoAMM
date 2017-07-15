@@ -11,7 +11,9 @@
 
 <div id="logOut">
     <div id="imgLogOut">
-        <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="/ProgettoAMM/Assets/logOutPic.png">
+        <c:if test="${currentUserPic != null}">
+            <img class="iconPic" title="fotoProfiloLogOut" alt="fotoProfiloLogOut" src="${currentUserPic}">
+        </c:if>
     </div>
     <div id="nameLogOut">
         <c:if test="${loggedIn == true}">

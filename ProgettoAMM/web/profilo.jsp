@@ -50,9 +50,6 @@
                         <label for="userPass">Password</label>
                         <input type="password" name="userPass" id="userPass" value="${utente.password}"/>
 
-                        <label for="userConfermaPass">Conferma la Password</label>
-                        <input type="password" name="userConfermaPass" id="userConfermaPass" value="${utente.confermaPassword}"/>
-
                         <button type="submit">Aggiorna</button>
                     </form>
                     <div id="cancellaProfilo">
