@@ -673,6 +673,12 @@ label:after, button:before
         width: 100%;
         margin-top: 10px;
     }
+    
+    #profileError p
+    {
+        position: relative;
+        left: 23%;
+    }
 
         /* MILESTONE 3/4/5 */
     .nuovoPost
@@ -889,7 +895,7 @@ label:after, button:before
         border: solid 2px;
     }
     
-        .nuovoPost
+    .nuovoPost
     {
         width: 80%;    
         margin-bottom: 30px;
@@ -1117,11 +1123,59 @@ label:after, button:before
         top: 80%;
     }
     
-    .bodyDescrizione
+    .bodyDescrizione, .bodyProfilo
     {
         position: relative;
         left: 20%;
     }
+    
+    .bodyProfilo
+    {
+        position: relative;
+        left: 12%;
+    }
+    
+    #profileForm
+    {
+        width: 10%;
+        margin-left: 10%
+    }
+    
+    #profilePic
+    {
+        position: relative;
+        top: 5px;
+        bottom: 40px;
+        left: 40%;
+    }
+    
+    #profileForm label::after, #profileForm button::after
+    {
+        content: '\A';
+        white-space: pre;
+        text-align: center;
+    }
+    
+    #profileForm input
+    {
+        width: 800%;
+    }
+    
+    #profileForm textarea
+    {
+        width: 800%;
+    }
+
+    #profileForm button
+    {
+        width: 811%;
+        position: relative;
+        right: 1%;
+        padding-left: 0px;
+        margin-right: 10px;
+        border: solid 2px;
+    }
+    
     
     #faqSito, #intestazione, #scopoEUtenti, #comeIscriversi, #sitoGratuito
     {
@@ -1206,11 +1260,6 @@ label:after, button:before
     #formNewPost #image
     {
         padding-left: 30px;
-    }
-
-    #cancellaProfilo button
-    {
-        margin-left: 108px;
     }
 
     #cercaUtente

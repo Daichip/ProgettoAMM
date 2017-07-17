@@ -26,8 +26,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet(loadOnStartup = 0)
 public class Login extends HttpServlet {
 
-    //private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
-    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.ClientDriver";
+    private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
+    //private static final String JDBC_DRIVER = "org.apache.derby.jdbc.ClientDriver";
     private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
     private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
     
@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
     
     @Override
     public void init() {
-        //String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
+        ///String dbConnection = "jdbc:derby:" + this.getServletContext().getRealPath("/") + DB_BUILD_PATH;
         String dbConnection = "jdbc:derby://localhost:1527/ammdb";
         try {
             Class.forName(JDBC_DRIVER);

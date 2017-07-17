@@ -22,7 +22,9 @@
         <jsp:include page="sidebar1.jsp"/>
 
         <c:if test="${loggedIn != true}">
-            <div id="profileError">Devi essere loggato per vedere questa pagina. Clicca su <a href="Login"> Login </a> per loggarti</div>
+            <div id="profileError">
+                <p>Devi essere loggato per vedere questa pagina. Clicca su <a href="Login"> Login </a> per loggarti</p>
+            </div>
         </c:if>
         <c:if test="${loggedIn == true}">    
                 <c:if test="${update == false}">
