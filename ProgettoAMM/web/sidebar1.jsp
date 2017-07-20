@@ -12,6 +12,7 @@
         <input id="ricerca" type="text" placeholder="Inserisci il nome dell'utente da cercare" value="" onkeyup=trySearch()>
         <button id="bottoneRicercaUtente" >Cerca</button>    
     </div>
+    <div>
     <h2>Persone</h2>
     <nav class="sideList" id="sidePersone">
         <ul>
@@ -20,6 +21,8 @@
             </c:forEach>
         </ul>
     </nav>
+    </div>
+    <div>
     <h2>Gruppi</h2>
     <nav class="sideList" id="sideGruppi">
         <ul>
@@ -28,4 +31,16 @@
             </c:forEach>
         </ul>
     </nav>
+    </div>
+        <div id="amicizia">
+        <h2>Amicizia</h2>
+        <c:if test="${testAmico == 'true'}">
+            <p>Amico di ${nomeAmico}</p>
+        </c:if>
+        <c:if test="${testAmico == 'false'}">
+            <form id="formAmicizia" action="Bacheca?user=${utente.id}&chiediAmicizia=true" method="post">
+                <button type="submit">Chiedi Amicizia</button>
+            </form>
+        </c:if>            
+    </div>
 </div>

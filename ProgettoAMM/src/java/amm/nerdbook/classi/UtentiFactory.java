@@ -367,10 +367,111 @@ public class UtentiFactory {
             }            
             e.printStackTrace();
         }
+   }
+           
         
+        /*******************************************************/
+        public Boolean verificaAmicizia(int loggedUserID, int userID)
+        {
+            Boolean result = false;
+            Boolean flag1 = false;
+            Boolean flag2 = false;
+                 
+            try {
+                // path, username, password
+                Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
 
+                String query = "select count(*) from Amicizie where follower = ? and followed = ?";
+
+                // Prepared Statement
+                PreparedStatement stmt = conn.prepareStatement(query);
+                stmt.setInt(1, userID);
+                stmt.setInt(2, loggedUserID);
+
+                // Esecuzione query
+                ResultSet res = stmt.executeQuery(); // il valore di res non può essere NULL se non quando la query è errata.
+                
+                if(res.next()) // verifico che il resultset abbia dei dati
+                {
+                    if(res.getInt(1) != 0) // se il valore dell'intero è diverso 0, significa che sono state trovate delle corrispondenze e che quindi gli utenti sono amici
+                        flag1 = true;  
+                }
+                
+                query = "select count(*) from Amicizie where follower = ? and followed = ?";
+
+                // Prepared Statement
+                stmt = conn.prepareStatement(query);
+                stmt.setInt(1, userID);
+                stmt.setInt(2, loggedUserID);
+
+                // Esecuzione query
+                res = stmt.executeQuery();
+             
+                if(res.next())
+                {
+                    if(res.getInt(1) != 0)
+                        flag2 = true;  
+                }
+ 
+                
+                stmt.close();
+                conn.close();
+
+            } catch (SQLException e) {
+                System.out.println("Attenzione: Errore nella ricerca dell'amicizia!");
+                e.printStackTrace();
+            }
+            
+            if(flag1 == true &&  flag2 == true)
+                result = true;
+            
+            return result;
+                
+        }
+        
+        public void StringiAmicizia(int loggedID, int userID)
+        {
+            try {
+                // path, username, password
+                Connection conn = DriverManager.getConnection(connectionString, "DF", "123");
+
+                String query = "INSERT INTO Amicizie (follower, followed)" + "VALUES (?, ?)";
+
+                // Prepared Statement
+                PreparedStatement stmt = conn.prepareStatement(query);
+                stmt.setInt(1, userID);
+                stmt.setInt(2, loggedID);
+
+                // Esecuzione query
+                int res1 = stmt.executeUpdate(); // il valore di res non può essere NULL se non quando la query è errata.
+                
+                if(res1 == 1)
+                {
+                    query = "INSERT INTO Amicizie (follower, followed)" + "VALUES (?, ?)";
+
+                    // Prepared Statement
+                    stmt = conn.prepareStatement(query);
+                    stmt.setInt(1, userID);
+                    stmt.setInt(2, loggedID);
+
+                    // Esecuzione query
+                    int res2 = stmt.executeUpdate();      
+                    if(res2 != 1)
+                        conn.rollback();
+                }
+                else
+                    conn.rollback();
+
+                stmt.close();
+                conn.close();
+
+            } catch (SQLException e) {
+                System.out.println("Attenzione: Errore nella creazione dell'amicizia!");
+                e.printStackTrace();
+            }
+        }
+        /*******************************************************/
+        
     }
-   
-}
 
 

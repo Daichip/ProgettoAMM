@@ -49,6 +49,7 @@ public class Bacheca extends HttpServlet {
         request.setAttribute("listaUtenti", userList);
         ArrayList<Gruppi> groupList = GruppiFactory.getInstance().getListaGruppi();
         request.setAttribute("listaGruppi", groupList);
+                
         
         if (sessione != null && sessione.getAttribute("loggedIn") != null && sessione.getAttribute("loggedIn").equals(true))
         {
@@ -72,6 +73,20 @@ public class Bacheca extends HttpServlet {
                 
                 List<Post> posts = PostFactory.getInstance().getPostByAuthor(utente);
                 request.setAttribute("posts", posts);
+                
+                /**************************************/
+                Integer loggedUserID = (Integer)sessione.getAttribute("loggedUserID");
+                Boolean testAmico = UtentiFactory.getInstance().verificaAmicizia(loggedUserID, userID);
+                request.setAttribute("testAmico", testAmico);
+                request.setAttribute("nomeAmico", utente.getNome());
+                
+                if(request.getParameter("chiediAmicizia") != null)
+                {
+                    UtentiFactory.getInstance().StringiAmicizia(loggedUserID, userID);
+                    request.removeAttribute("ChiediAmicizia");
+                }
+                /**************************************/
+                
                 
                 request.getRequestDispatcher("bacheca.jsp").forward(request, response);
             } else {

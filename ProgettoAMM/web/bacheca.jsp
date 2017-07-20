@@ -32,8 +32,8 @@
             
             <c:forEach var="post" items="${posts}">
                 <div class="post" <!--id="post1-->">
-                     <img id="proPic" title="profilePic" alt="fotoProfilo" src="${post.autore.urlFotoProfilo}">
-                     <h3><c:out value="${post.autore.nome} ${post.autore.cognome} ha scritto"/></h3>
+                    <img id="proPic" title="profilePic" alt="fotoProfilo" src="${post.autore.urlFotoProfilo}">
+                    <h3><c:out value="${post.autore.nome} ${post.autore.cognome} ha scritto"/></h3>
                     <c:if test="${post.tipo == 'TEXT'}">
                         <p>${post.contenuto}</p>
                     </c:if>
